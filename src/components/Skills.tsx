@@ -5,7 +5,7 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="md:mr-20 md:px-10 mt-[1000px] mx-10 text-left">
+    <div className="md:mr-20 md:px-10 pt-[500px] mx-10 text-left">
       <motion.h1
         initial={{ x: 1700 }}
         animate={{ x: 0 }}

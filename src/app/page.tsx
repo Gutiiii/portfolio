@@ -1,6 +1,7 @@
 "use client";
 import About from "@/components/About";
 import Background from "@/components/Background";
+import Education from "@/components/Education";
 import Icons from "@/components/Icons";
 import Navbar from "@/components/Navbar";
 import Skills from "@/components/Skills";
@@ -89,6 +90,9 @@ export default function Home() {
           </div>
           <div ref={skillsRef} id="skills">
             <Skills />
+          </div>
+          <div ref={educationRef} id="education">
+            <Education />
           </div>
         </div>
       </div>
