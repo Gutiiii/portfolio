@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import React, { Fragment, forwardRef } from "react";
 
-const About = forwardRef((props, ref) => {
+const About = () => {
   return (
     <Fragment>
       <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
@@ -62,6 +62,6 @@ const About = forwardRef((props, ref) => {
       </div>
     </Fragment>
   );
-});
+};
 
 export default About;
