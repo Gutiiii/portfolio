@@ -15,6 +15,7 @@ export default function Home() {
   const educationRef = useRef<any>(null);
   const projectsRef = useRef<any>(null);
   const contactRef = useRef<any>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -51,6 +52,7 @@ export default function Home() {
       });
     };
   }, [aboutRef, skillsRef, educationRef, projectsRef, contactRef]);
+
   const handleOnClick = (section: string) => {
     if (section === "about") {
       aboutRef.current.scrollIntoView({ behavior: "smooth" });
@@ -68,6 +70,7 @@ export default function Home() {
       contactRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <Background>
       <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white font-sans">
