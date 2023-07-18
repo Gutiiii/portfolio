@@ -5,9 +5,9 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="md:mr-20 md:px-10 mt-32 mx-10 text-left">
+    <div className="md:mr-20 md:px-10 mt-[1000px] mx-10 text-left">
       <motion.h1
-        initial={{ x: 1000 }}
+        initial={{ x: 1700 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
         className="pb-4 text-white text-lg font-bold uppercase"
@@ -15,7 +15,7 @@ const Skills = () => {
         Skills
       </motion.h1>
       <motion.div
-        initial={{ x: 1000 }}
+        initial={{ x: 1700 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
         className="grid 2xl:grid-cols-2 grid-cols-1 text-left"
@@ -47,7 +47,7 @@ const Skills = () => {
             <Progress value={90} />
           </div>
         </div>
-        <div className="2xl:pl-4">
+        <div className="2xl:pl-4 ">
           <span className="text-lg ">Personal</span>
           <div className="mt-4 text-white ">
             <span>Logical thinking</span>
@@ -72,7 +72,7 @@ const Skills = () => {
         </div>
       </motion.div>
       <motion.div
-        initial={{ x: 1000 }}
+        initial={{ x: 1700 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
       >
