@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <html lang="en">
       <Head>
         <meta
           name="keywords"
@@ -30,7 +30,7 @@ export default function RootLayout({
         />
         <link rel="canonical" href="https://samuel-gutmans.ch" />
       </Head>
-      <div className={`${roboto.variable}`}>{children}</div>
-    </>
+      <body className={`${roboto.variable}`}>{children}</body>
+    </html>
   );
 }
