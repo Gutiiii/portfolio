@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import Head from "next/head";
 import "./globals.css";
 
 const roboto = Roboto({
@@ -21,15 +22,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
+    <>
+      <Head>
         <meta
           name="keywords"
           content="Samuel Gutmans, Portfolio, Software Engineer, Frontend Engineer, Backend Engineer, Fullstack Engineer"
         />
         <link rel="canonical" href="https://samuel-gutmans.ch" />
-      </head>
-      <body className={`${roboto.variable}`}>{children}</body>
-    </html>
+      </Head>
+      <div className={`${roboto.variable}`}>{children}</div>
+    </>
   );
 }
