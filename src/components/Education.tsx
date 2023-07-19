@@ -29,7 +29,7 @@ const Education: FC = () => {
     "Python",
   ];
   return (
-    <div className="md:mr-20 md:px-10 pt-[500px] mx-10 text-left">
+    <div className="md:mr-20 md:px-10 mx-10 text-left">
       <motion.h1
         initial={{ x: 1700 }}
         animate={{ x: 0 }}
@@ -45,7 +45,7 @@ const Education: FC = () => {
             <Timeline>
               <Timeline.Item>
                 <Timeline.Point />
-                <Timeline.Content>
+                <Timeline.Content className="">
                   <Timeline.Time>july 2019 - juyl 2023</Timeline.Time>
                   <Timeline.Title className="text-gray">
                     Informatikmittelschule
@@ -53,12 +53,12 @@ const Education: FC = () => {
                   <Timeline.Body>
                     <p>IT & Business School</p>
                   </Timeline.Body>
-                  <div className="flex space-x-2 ">
+                  <div className="flex flex-wrap ">
                     {imsSkills.map((skill, index) => (
                       <Badge
                         key={index}
                         variant="outline"
-                        className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6"
+                        className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6 mb-2 mr-1"
                       >
                         {skill}
                       </Badge>
@@ -119,12 +119,12 @@ const Education: FC = () => {
                 <Timeline.Body>
                   <p>IT-Service Provider for Customers in switzerland</p>
                 </Timeline.Body>
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap">
                   {mdSkills.map((skill, index) => (
                     <Badge
                       key={index}
                       variant="outline"
-                      className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6"
+                      className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
@@ -145,12 +145,12 @@ const Education: FC = () => {
                     world.
                   </p>
                 </Timeline.Body>
-                <div className="flex space-x-2">
+                <div className="flex flex-wrap">
                   {freelanceSkills.map((skill, index) => (
                     <Badge
                       key={index}
                       variant="outline"
-                      className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6"
+                      className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>

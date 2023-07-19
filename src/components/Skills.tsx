@@ -5,7 +5,7 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="md:mr-20 md:px-10 pt-[500px] mx-10 text-left">
+    <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
       <motion.h1
         initial={{ x: 1700 }}
         animate={{ x: 0 }}
@@ -79,6 +79,7 @@ const Skills = () => {
         <div className="pb-4 pt-8 text-white text-lg font-bold uppercase">
           More Knowledge
         </div>
+        <li className="pl-4">C#</li>
         <li className="pl-4">HTML & CSS</li>
         <li className="pl-4">SQL</li>
         <li className="pl-4">MongoDB</li>

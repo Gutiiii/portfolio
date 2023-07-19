@@ -6,8 +6,6 @@ interface BackgroundProps {
   children?: ReactNode; // Defines the types of children that the component can accept
 }
 
-interface Positions {}
-
 const Background: FC<BackgroundProps> = ({ children }) => {
   const cursorPosition = useMousePosition();
   const [backgroundStyle, setBackgroundStyle] = useState({});
