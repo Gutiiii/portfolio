@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   description:
     "I'm Samuel Gutmans, a software engineer with a knack for turning complex problems into simple, efficient solutions. Take a look through my portfolio to see how I apply my skills and adaptability across various software projects, always striving for excellence.",
   icons: "favicon.ico",
+  keywords: [
+    "Samuel Gutmans",
+    "Portfolio",
+    "Software Engineer",
+    "Frontend Engineer",
+    "Backend Engineer",
+    "Fullstack Engineer",
+  ],
 };
 
 export default function RootLayout({
@@ -24,11 +32,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <meta
-          name="keywords"
-          content="Samuel Gutmans, Portfolio, Software Engineer, Frontend Engineer, Backend Engineer, Fullstack Engineer"
+        <link
+          rel="canonical"
+          href="https://samuel-gutmans.ch"
+          key="canonical"
         />
-        <link rel="canonical" href="https://samuel-gutmans.ch" />
       </Head>
       <body className={`${roboto.variable}`}>{children}</body>
     </html>
