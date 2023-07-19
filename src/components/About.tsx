@@ -6,14 +6,14 @@ const About = () => {
   return (
     <Fragment>
       <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
-        <motion.h1
+        <motion.h2
           initial={{ x: 1700 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
           className="pb-4 text-white text-lg font-bold uppercase"
         >
           About
-        </motion.h1>
+        </motion.h2>
         <motion.p
           initial={{ x: 1700 }}
           animate={{ x: 0 }}

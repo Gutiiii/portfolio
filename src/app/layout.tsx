@@ -9,7 +9,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Samuel Gutmans Portfolio",
+  title: "Samuel Gutmans Portfolio | Software Engineer",
   description:
     "I'm Samuel Gutmans, a software engineer with a knack for turning complex problems into simple, efficient solutions. Take a look through my portfolio to see how I apply my skills and adaptability across various software projects, always striving for excellence.",
   icons: "favicon.ico",
@@ -27,6 +27,7 @@ export default function RootLayout({
           name="keywords"
           content="Samuel Gutmans, Portfolio, Software Engineer, Frontend Engineer, Backend Engineer, Fullstack Engineer"
         />
+        <link rel="canonical" href="https://samuel-gutmans.ch" />
       </head>
       <body className={`${roboto.variable}`}>{children}</body>
     </html>
