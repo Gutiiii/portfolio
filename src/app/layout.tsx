@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Fullstack Engineer",
   ],
   alternates: {
-    canonical: "samuel-gutmans.ch",
+    canonical: "https://samuel-gutmans.ch",
   },
 };
 
