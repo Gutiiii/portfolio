@@ -80,7 +80,6 @@ export default function Home() {
           name="keywords"
           content="Samuel Gutmans, Portfolio, Software Engineer, Frontend Engineer, Backend Engineer, Fullstack Engineer"
         />
-        <link rel="canonical" href="https://samuel-gutmans.ch" />
       </Head>
       <Background>
         <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white font-sans">
