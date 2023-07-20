@@ -38,7 +38,12 @@ const Education: FC = () => {
       >
         Education
       </motion.h2>
-      <div className="grid 2xl:grid-cols-2 grid-cols-1">
+      <motion.div
+        initial={{ x: 1700 }}
+        animate={{ x: 0 }}
+        transition={{ duration: 0.5 }}
+        className="grid 2xl:grid-cols-2 grid-cols-1"
+      >
         <div className="space-y-4">
           <span className="text-xl text-gray-200">School</span>
           <div>
@@ -160,7 +165,7 @@ const Education: FC = () => {
             </Timeline.Item>
           </Timeline>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
