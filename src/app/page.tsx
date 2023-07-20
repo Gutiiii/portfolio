@@ -89,10 +89,10 @@ export default function Home() {
           <div ref={aboutRef} id="about">
             <About />
           </div>
-          <div ref={skillsRef} id="skills" className="mt-[400px]">
+          <div ref={skillsRef} id="skills" className="mt-[500px]">
             <Skills />
           </div>
-          <div ref={educationRef} id="education" className="mt-[400px]">
+          <div ref={educationRef} id="education" className="mt-[500px]">
             <Education />
           </div>
         </div>

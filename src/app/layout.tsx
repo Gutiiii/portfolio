@@ -1,12 +1,10 @@
+import { Montserrat } from "@next/font/google";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 
-const roboto = Roboto({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-roboto",
-  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +32,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable}`}>{children}</body>
+      <Head>
+        <link
+          rel="canonical"
+          href="https://samuel-gutmans.ch"
+          key="canonical"
+        />
+      </Head>
+      <body className={`${montserrat.className}`}>{children}</body>
     </html>
   );
 }

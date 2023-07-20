@@ -14,51 +14,37 @@ const About = () => {
         >
           About
         </motion.h2>
-        <motion.p
+        <motion.div
           initial={{ x: 1700 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
-          esse molestie consequat, vel illum dolore eu feugiat nulla facilisis
-          at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-          Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-          diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-          erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-          et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-          Lorem ipsum dolor sit amet. Duis autem vel eum iriure dolor in
-          hendrerit in vulputate velit esse molestie consequat, vel illum dolore
-          eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
-          dignissim qui blandit praesent luptatum zzril delenit augue duis
-          dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,Lorem
-          ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-          eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-          diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum.
-        </motion.p>
+          <p className="text-2xl">
+            Hello, I'm Samuel Gutmans, a 20-year-old software engineer residing
+            in Basel, Switzerland. I can converse fluently in German, English,
+            and Danish. Holding degrees in Computer Science and Business
+            Administration, I've used my knowledge and skills as a freelance
+            software engineer in my spare time for over a year. During this
+            time, I've built various projects for clients scattered around the
+            globe.
+          </p>
+          <br></br>
+          <p className="text-2xl">
+            When it comes to projects, I've made use of a diverse set of
+            technologies such as ReactJS (NextJS), NodeJS, TypeScript, Python,
+            PHP, and many more. My freelance software engineering journey has
+            led me to work on a variety of tasks including web projects, bots,
+            and an array of different automations.
+          </p>
+          <br></br>
+          <p className="text-2xl">
+            If I were to pinpoint my greatest strength, it would be my
+            problem-solving mindset. I have a genuine fascination with diving
+            headfirst into complex problems and finding the most efficient
+            solutions. This challenge is something I thoroughly enjoy and
+            embrace in my work.
+          </p>
+        </motion.div>
       </div>
     </Fragment>
   );
