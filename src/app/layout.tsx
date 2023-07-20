@@ -12,7 +12,7 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "Samuel Gutmans Portfolio | Software Engineer",
   description:
-    "I'm Samuel Gutmans, a software engineer with a knack for turning complex problems into simple, efficient solutions. Take a look through my portfolio to see how I apply my skills and adaptability across various software projects, always striving for excellence.",
+    "I'm Samuel Gutmans, a software engineer with a knack for turning complex problems into simple, efficient solutions. Take a look through my portfolio to see how I apply my skills and adaptability across various software projects.",
   icons: "favicon.ico",
   keywords: [
     "Samuel Gutmans",
