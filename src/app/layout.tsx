@@ -22,6 +22,9 @@ export const metadata: Metadata = {
     "Backend Engineer",
     "Fullstack Engineer",
   ],
+  alternates: {
+    canonical: "samuel-gutmans.ch",
+  },
 };
 
 export default function RootLayout({
