@@ -4,11 +4,11 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 
 const Welcome = () => {
-  const [text] = useTypewriter({
-    words: ["Software Engineer", "Frontend Engineer", "Backend Engineer"],
-    loop: true,
-    delaySpeed: 2000,
-  });
+  // const [text] = useTypewriter({
+  //   words: ["Software Engineer", "Frontend Engineer", "Backend Engineer"],
+  //   loop: true,
+  //   delaySpeed: 2000,
+  // });
   return (
     <div className="md:ml-20 ml-10 text-left ">
       <div className="md:pt-40 pt-10">
@@ -34,7 +34,7 @@ const Welcome = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          I am a {text}
+          I am a Software Engineer
           <Cursor cursorColor="gray" />
           living in Switzerland.
         </motion.h2>
