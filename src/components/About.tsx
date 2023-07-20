@@ -20,17 +20,17 @@ const About = () => {
           transition={{ duration: 0.5 }}
         >
           <p className="text-2xl">
-            Hello, I'm Samuel Gutmans, a 20-year-old software engineer residing
-            in Basel, Switzerland. I can converse fluently in German, English,
-            and Danish. Holding degrees in Computer Science and Business
-            Administration, I've used my knowledge and skills as a freelance
-            software engineer in my spare time for over a year. During this
-            time, I've built various projects for clients scattered around the
-            globe.
+            Hello, I&apos;m Samuel Gutmans, a 20-year-old software engineer
+            residing in Basel, Switzerland. I can converse fluently in German,
+            English, and Danish. Holding degrees in Computer Science and
+            Business Administration, I&apos;ve used my knowledge and skills as a
+            freelance software engineer in my spare time for over a year. During
+            this time, I&apos;ve built various projects for clients scattered
+            around the globe.
           </p>
           <br></br>
           <p className="text-2xl">
-            When it comes to projects, I've made use of a diverse set of
+            When it comes to projects, I&apos;ve made use of a diverse set of
             technologies such as ReactJS (NextJS), NodeJS, TypeScript, Python,
             PHP, and many more. My freelance software engineering journey has
             led me to work on a variety of tasks including web projects, bots,

@@ -34,7 +34,7 @@ const Welcome = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          I am a Software Engineer
+          I&apos;m a Software Engineer
           <Cursor cursorColor="gray" />
           living in Switzerland.
         </motion.h2>
