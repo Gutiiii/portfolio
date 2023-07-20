@@ -75,7 +75,7 @@ export default function Home() {
 
   return (
     <Background>
-      <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white font-sans">
+      <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white ">
         <div>
           <div className="lg:fixed">
             <Welcome />
