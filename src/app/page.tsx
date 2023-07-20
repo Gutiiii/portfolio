@@ -74,40 +74,32 @@ export default function Home() {
   };
 
   return (
-    <>
-      <Head>
-        <meta
-          name="keywords"
-          content="Samuel Gutmans, Portfolio, Software Engineer, Frontend Engineer, Backend Engineer, Fullstack Engineer"
-        />
-      </Head>
-      <Background>
-        <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white font-sans">
-          <div>
-            <div className="lg:fixed">
-              <Welcome />
-              <Navbar
-                currentSection={currentSection}
-                handleOnClick={handleOnClick}
-              />
-            </div>
-          </div>
-          <div className="text-gray-400 font-thin tracking-wide">
-            <div ref={aboutRef} id="about">
-              <About />
-            </div>
-            <div ref={skillsRef} id="skills" className="mt-[400px]">
-              <Skills />
-            </div>
-            <div ref={educationRef} id="education" className="mt-[400px]">
-              <Education />
-            </div>
-          </div>
-        </div>
+    <Background>
+      <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white font-sans">
         <div>
-          <Icons />
+          <div className="lg:fixed">
+            <Welcome />
+            <Navbar
+              currentSection={currentSection}
+              handleOnClick={handleOnClick}
+            />
+          </div>
         </div>
-      </Background>
-    </>
+        <div className="text-gray-400 font-thin tracking-wide">
+          <div ref={aboutRef} id="about">
+            <About />
+          </div>
+          <div ref={skillsRef} id="skills" className="mt-[400px]">
+            <Skills />
+          </div>
+          <div ref={educationRef} id="education" className="mt-[400px]">
+            <Education />
+          </div>
+        </div>
+      </div>
+      <div>
+        <Icons />
+      </div>
+    </Background>
   );
 }

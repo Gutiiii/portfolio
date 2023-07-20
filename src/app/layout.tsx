@@ -34,9 +34,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="canonical" href="https://samuel-gutmans.ch" />
-      </Head>
       <body className={`${roboto.variable}`}>{children}</body>
     </html>
   );
