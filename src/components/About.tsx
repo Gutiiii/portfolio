@@ -10,7 +10,7 @@ const About = () => {
           initial={{ x: 1700 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
-          className="pb-4 text-white text-3xl font-bold "
+          className="pb-4 text-white sm:text-3xl text-2xl font-bold "
         >
           About
         </motion.h2>

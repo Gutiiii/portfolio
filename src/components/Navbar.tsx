@@ -39,7 +39,7 @@ const Navbar: FC<NavbarProps> = ({
 
   return (
     <div className="ml-20 lg:mt-20">
-      <ol className="space-y-8 text-xl lg:list-item hidden">
+      <ol className="space-y-8 text-2xl lg:list-item hidden">
         <motion.div
           className={`group cursor-pointer flex`}
           initial={{ x: -750 }}

@@ -4,9 +4,9 @@ import Background from "@/components/Background";
 import Education from "@/components/Education";
 import Icons from "@/components/Icons";
 import Navbar from "@/components/Navbar";
+import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Welcome from "@/components/Welcome";
-import Head from "next/head";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
@@ -89,11 +89,26 @@ export default function Home() {
           <div ref={aboutRef} id="about">
             <About />
           </div>
-          <div ref={skillsRef} id="skills" className="mt-[500px]">
+          <div
+            ref={skillsRef}
+            id="skills"
+            className="xl:mt-[350px] sm:mt-[300px] mt-52"
+          >
             <Skills />
           </div>
-          <div ref={educationRef} id="education" className="mt-[500px]">
+          <div
+            ref={educationRef}
+            id="education"
+            className="xl:mt-[400px] sm:mt-[300px] mt-52"
+          >
             <Education />
+          </div>
+          <div
+            ref={projectsRef}
+            id="projects"
+            className="xl:mt-[400px] sm:mt-[300px] mt-52"
+          >
+            <Projects />
           </div>
         </div>
       </div>

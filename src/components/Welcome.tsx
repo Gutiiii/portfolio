@@ -21,7 +21,7 @@ const Welcome = () => {
           Samuel Gutmans
         </motion.h1>
         <motion.h2
-          className="my-5 sm:text-2xl text-xl md:font-thin mx-auto"
+          className="my-5 sm:text-3xl text-2xl md:font-thin mx-auto"
           initial={{ x: -1030 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
@@ -29,7 +29,7 @@ const Welcome = () => {
           Welcome to my Portfolio
         </motion.h2>
         <motion.h2
-          className="sm:text-lg text-sm
+          className="sm:text-lg text-md
           mr-10 text-gray-400 font-thin"
           initial={{ x: -1000 }}
           animate={{ x: 0 }}

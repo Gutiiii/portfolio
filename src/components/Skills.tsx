@@ -10,7 +10,7 @@ const Skills = () => {
         initial={{ x: 1700 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
-        className="pb-4 text-white text-lg font-bold uppercase"
+        className="pb-4 text-white sm:text-3xl text-2xl font-bold"
       >
         Skills
       </motion.h2>
@@ -21,7 +21,7 @@ const Skills = () => {
         className="grid 2xl:grid-cols-2 grid-cols-1 text-left"
       >
         <div className="pb-8 2xl:pr-4">
-          <span className="text-lg ">Technical</span>
+          <span className="sm:text-2xl text-xl">Technical</span>
           <div className="mt-4 text-white ">
             <span>NodeJS & ReactJS</span>
             <Progress value={90} />
@@ -48,7 +48,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="2xl:pl-4 ">
-          <span className="text-lg ">Personal</span>
+          <span className="sm:text-2xl text-xl">Personal</span>
           <div className="mt-4 text-white ">
             <span>Logical thinking</span>
             <Progress value={95} />

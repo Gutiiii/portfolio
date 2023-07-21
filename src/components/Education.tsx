@@ -34,7 +34,7 @@ const Education: FC = () => {
         initial={{ x: 1700 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.5 }}
-        className="pb-4 text-white text-lg font-bold uppercase mb-8"
+        className="pb-4 text-white sm:text-3xl text-2xl font-bold mb-2"
       >
         Education
       </motion.h2>
@@ -45,7 +45,7 @@ const Education: FC = () => {
         className="grid 2xl:grid-cols-2 grid-cols-1"
       >
         <div className="space-y-4">
-          <span className="text-xl text-gray-200">School</span>
+          <span className="sm:text-2xl text-xl text-gray-300">School</span>
           <div>
             <Timeline>
               <Timeline.Item>
@@ -63,7 +63,7 @@ const Education: FC = () => {
                       <Badge
                         key={index}
                         variant="outline"
-                        className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6 mb-2 mr-1"
+                        className="rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
                       >
                         {skill}
                       </Badge>
@@ -112,7 +112,7 @@ const Education: FC = () => {
         </div>
 
         <div className="space-y-4">
-          <span className="text-xl text-gray-200">Work</span>
+          <span className="sm:text-2xl text-xl text-gray-300">Work</span>
           <Timeline>
             <Timeline.Item>
               <Timeline.Point />
@@ -129,7 +129,7 @@ const Education: FC = () => {
                     <Badge
                       key={index}
                       variant="outline"
-                      className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6 mb-2 mr-1"
+                      className="rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
@@ -155,7 +155,7 @@ const Education: FC = () => {
                     <Badge
                       key={index}
                       variant="outline"
-                      className="rounded-full bg-[#41EAC6] border-bg-[#41EAC6] opacity-50 h-6 mb-2 mr-1"
+                      className="rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
