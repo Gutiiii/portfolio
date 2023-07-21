@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import Head from "next/head";
 import "./globals.css";
 
-const roboto = Roboto({
+const fira_code = Fira_Code({
   subsets: ["latin"],
   weight: "300",
 });
@@ -40,7 +40,7 @@ export default function RootLayout({
           key="canonical"
         />
       </Head>
-      <body className={`${roboto.className}`}>{children}</body>
+      <body className={`${fira_code.className}`}>{children}</body>
     </html>
   );
 }

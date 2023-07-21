@@ -1,16 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import React, { Fragment, forwardRef } from "react";
+import React, { Fragment } from "react";
 
 const About = () => {
   return (
     <Fragment>
-      <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
+      <div className="md:mr-20 md:px-10 pt-40 mx-10">
         <motion.h2
           initial={{ x: 1700 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
-          className="pb-4 text-white text-lg font-bold uppercase"
+          className="pb-4 text-white text-3xl font-bold "
         >
           About
         </motion.h2>
@@ -19,7 +19,7 @@ const About = () => {
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-2xl">
+          <p className="sm:text-2xl text-xl">
             Hello, I&apos;m Samuel Gutmans, a 20-year-old software engineer
             residing in Basel, Switzerland. I can converse fluently in German,
             English, and Danish. Holding degrees in Computer Science and
@@ -29,7 +29,7 @@ const About = () => {
             around the globe.
           </p>
           <br></br>
-          <p className="text-2xl">
+          <p className="sm:text-2xl text-xl">
             When it comes to projects, I&apos;ve made use of a diverse set of
             technologies such as ReactJS (NextJS), NodeJS, TypeScript, Python,
             PHP, and many more. My freelance software engineering journey has
@@ -37,7 +37,7 @@ const About = () => {
             and an array of different automations.
           </p>
           <br></br>
-          <p className="text-2xl">
+          <p className="sm:text-2xl text-xl">
             If I were to pinpoint my greatest strength, it would be my
             problem-solving mindset. I have a genuine fascination with diving
             headfirst into complex problems and finding the most efficient
