@@ -29,14 +29,13 @@ const Welcome = () => {
           Welcome to my Portfolio
         </motion.h2>
         <motion.h2
-          className="sm:text-xl  mr-10 text-gray-400 font-thin"
+          className="sm:text-xl  
+          mr-10 text-gray-400 font-thin"
           initial={{ x: -1000 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          I&apos;m a Software Engineer
-          <Cursor cursorColor="gray" />
-          living in Switzerland.
+          I&apos;m a Software Engineer living in Switzerland.
         </motion.h2>
       </div>
     </div>
