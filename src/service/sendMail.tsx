@@ -35,10 +35,13 @@ export const onSendMail = async (
           progress: undefined,
           theme: "colored",
         });
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
       }
     })
     .catch((error) => {
-      toast.error("Somethng wne twrong! Please try again!", {
+      toast.error("Somethng went wrong! Please try again!", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,
@@ -47,5 +50,8 @@ export const onSendMail = async (
         progress: undefined,
         theme: "colored",
       });
+      setTimeout(() => {
+        window.location.reload();
+      }, 3000);
     });
 };
