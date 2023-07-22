@@ -1,6 +1,7 @@
 "use client";
 import About from "@/components/About";
 import Background from "@/components/Background";
+import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Icons from "@/components/Icons";
 import Navbar from "@/components/Navbar";
@@ -8,6 +9,7 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Welcome from "@/components/Welcome";
 import React, { useEffect, useRef, useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
@@ -110,11 +112,19 @@ export default function Home() {
           >
             <Projects />
           </div>
+          <div
+            ref={contactRef}
+            id="contact"
+            className="xl:mt-[400px] sm:mt-[300px] mt-52"
+          >
+            <Contact />
+          </div>
         </div>
       </div>
       <div>
         <Icons />
       </div>
+      <ToastContainer />
     </Background>
   );
 }
