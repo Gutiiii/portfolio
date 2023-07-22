@@ -24,7 +24,7 @@ export const onSendMail = async (
         });
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 3200);
       } else {
         toast.error("Something went wrong! Please try again", {
           position: "top-center",
@@ -37,7 +37,7 @@ export const onSendMail = async (
         });
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 3200);
       }
     })
     .catch((error) => {
@@ -52,6 +52,6 @@ export const onSendMail = async (
       });
       setTimeout(() => {
         window.location.reload();
-      }, 3000);
+      }, 3200);
     });
 };
