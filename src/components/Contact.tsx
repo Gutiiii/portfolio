@@ -1,13 +1,17 @@
 "use client";
-import sendMail from "@/service/sendMail";
+import { onSendMail } from "@/service/sendMail";
 import { motion } from "framer-motion";
-import { FC, FormEvent } from "react";
+import { FC, FormEvent, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact: FC = () => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
   const onSend = (event: FormEvent) => {
     event.preventDefault();
-    console.log("HELLO2");
-    sendMail();
+    onSendMail(name, email, message);
   };
   return (
     <div className="md:mr-20 md:px-10 pt-40 mx-10">
@@ -24,10 +28,12 @@ const Contact: FC = () => {
           <div className="relative">
             <input
               type="text"
+              required
               name="name"
               id="name"
               className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-10 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mb-8 mr-8 "
               placeholder="Name"
+              onChange={(e) => setName(e.target.value)}
             ></input>
             <label
               htmlFor="name"
@@ -38,10 +44,12 @@ const Contact: FC = () => {
             <div className="relative">
               <input
                 type="email"
+                required
                 name="email"
                 id="email"
                 className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-10 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mr-8 "
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               ></input>
               <label
                 htmlFor="email"
@@ -54,12 +62,14 @@ const Contact: FC = () => {
         </div>
         <div className="relative">
           <textarea
+            required
             className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-32 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mb-8 mr-8 "
             placeholder="Email"
+            onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           <label
             htmlFor="email"
-            className="absolute -top-3 left-0 peer-placeholder-shown:text-base peer-placeholder-shown:top-4 transition-all duration-200 peer-focus:-top-4 peer-focus:text-sm"
+            className="absolute -top-4 left-0 peer-placeholder-shown:text-base peer-placeholder-shown:top-4.5 transition-all duration-200 peer-focus:-top-4.5 peer-focus:text-sm"
           >
             Your Message
           </label>

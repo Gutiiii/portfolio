@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { FC } from "react";
 import { FaCode } from "react-icons/fa";
