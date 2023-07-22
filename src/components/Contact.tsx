@@ -40,7 +40,7 @@ const Contact: FC = () => {
                 type="email"
                 name="email"
                 id="email"
-                className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-10 peer placeholder-transparent  focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mr-8 "
+                className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-10 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mr-8 "
                 placeholder="Email"
               ></input>
               <label
