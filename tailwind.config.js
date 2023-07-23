@@ -74,6 +74,9 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
+    variants: {
+      display: ['responsive', 'group-hover', 'group-focus'],
+    },
   },
   plugins: [require("tailwindcss-animate", "flowbite/plugin")],
 }

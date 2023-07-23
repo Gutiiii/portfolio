@@ -27,6 +27,7 @@ const Education: FC = () => {
     "TypeScript",
     "TailwindCSS",
     "Python",
+    "PHP",
   ];
   return (
     <div className="md:mr-20 md:px-10 mx-10 text-left">
