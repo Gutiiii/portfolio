@@ -79,7 +79,7 @@ export default function Home() {
     <Background>
       <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white ">
         <div>
-          <div className="lg:fixed">
+          <div className="xl:fixed">
             <Welcome />
             <Navbar
               currentSection={currentSection}

@@ -19,7 +19,7 @@ const Icons = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 100 }}
-      transition={{ duration: 1, delay: 1 }}
+      transition={{ duration: 1.5, delay: 1.5 }}
       className={windowHeight > 855 ? classIfHigh : classIfLow}
     >
       <a

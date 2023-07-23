@@ -23,7 +23,12 @@ const Contact: FC = () => {
       >
         Contact me
       </motion.h2>
-      <form onSubmit={onSend}>
+      <motion.form
+        onSubmit={onSend}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        transition={{ duration: 1.5, delay: 1.5 }}
+      >
         <div className="mb-24">
           <div className="relative">
             <input
@@ -37,7 +42,7 @@ const Contact: FC = () => {
             ></input>
             <label
               htmlFor="name"
-              className="absolute -top-3 left-0 peer-placeholder-shown:text-base  peer-placeholder-shown:top-2 transition-all duration-200 peer-focus:-top-3 peer-focus:text-sm"
+              className="absolute -top-3 left-0 peer-placeholder-shown:text-base  peer-placeholder-shown:top-2 transition-all duration-200 peer-focus:-top-3 peer-focus:text-sm cursor-text"
             >
               Name
             </label>
@@ -53,7 +58,7 @@ const Contact: FC = () => {
               ></input>
               <label
                 htmlFor="email"
-                className="absolute -top-3 left-0 peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all duration-200 peer-focus:-top-3 peer-focus:text-sm"
+                className="absolute -top-3 left-0 peer-placeholder-shown:text-base peer-placeholder-shown:top-2 transition-all duration-200 peer-focus:-top-3 peer-focus:text-sm cursor-text"
               >
                 Email
               </label>
@@ -69,7 +74,7 @@ const Contact: FC = () => {
           ></textarea>
           <label
             htmlFor="email"
-            className="absolute -top-4 left-0 peer-placeholder-shown:text-base peer-placeholder-shown:top-4.5 transition-all duration-200 peer-focus:-top-4.5 peer-focus:text-sm"
+            className="absolute -top-4 left-0 peer-placeholder-shown:text-base peer-placeholder-shown:top-4.5 transition-all duration-200 peer-focus:-top-4.5 peer-focus:text-sm cursor-text"
           >
             Your Message
           </label>
@@ -82,7 +87,7 @@ const Contact: FC = () => {
             Send!
           </button>
         </div>
-      </form>
+      </motion.form>
     </div>
   );
 };

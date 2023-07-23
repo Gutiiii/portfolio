@@ -1,18 +1,23 @@
-"use client";
+import axios from "axios";
 import { toast } from "react-toastify";
+
 export const onSendMail = async (
   name: string,
   email: string,
   message: string
 ) => {
-  fetch("/api/sendMail", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, email, message }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.status === "Email sent") {
+  axios
+    .post(
+      "/api/sendMail",
+      { name, email, message },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
+    .then((res) => {
+      if (res.status === 200) {
         toast.success("Email sent successfully", {
           position: "top-center",
           autoClose: 2500,
@@ -41,7 +46,8 @@ export const onSendMail = async (
       }
     })
     .catch((error) => {
-      toast.error("Somethng went wrong! Please try again!", {
+      console.log("Error1");
+      toast.error("Something went wrong! Please try again", {
         position: "top-center",
         autoClose: 2500,
         hideProgressBar: false,

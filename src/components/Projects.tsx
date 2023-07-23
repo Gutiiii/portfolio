@@ -16,7 +16,12 @@ const Projects: FC = () => {
       >
         Projects
       </motion.h2>
-      <section className="mt-8">
+      <motion.section
+        className="mt-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        transition={{ duration: 1.5, delay: 1.5 }}
+      >
         <div className="group">
           <div className="bg-[#151715] h-44 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 mb-96 ">
             <div className="w-9 pt-2 ">
@@ -33,7 +38,7 @@ const Projects: FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

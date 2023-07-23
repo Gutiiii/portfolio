@@ -1,42 +1,46 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
+import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
-        const { name, email, message } = req.body;
 
+        const body = await req.json()
+
+        const { name, email, message } = body;
+
+        console.log(name)
+        console.log(email)
+        console.log(message)
         const formData = new URLSearchParams();
         formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
-        formData.append('to', 'contact@samuel-gutmans.ch');
-        formData.append('subject', `Contact name: ${name}`);
-        formData.append('text', message);
+        formData.append('to', 'samuel.gutmans@gmail.com');
+        formData.append('subject', "New Mail from Portfolio");
+        formData.append('text', `Contact name: ${name} \n Email Adresse: ${email} \n\n Message: ${message}`);
 
         try {
-            const emailRes = await fetch(`https://api.mailgun.net/v3/${process.env.MAILGUN_DOMAIN}/messages`, {
+            const response = await fetch(`https://api.mailgun.net/v3/${process.env.MAILGUN_DOMAIN}/messages`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Basic ${Buffer.from(`api:${process.env.MAILGUN_API_KEY}`).toString('base64')}`,
                 },
-                body: formData
+                body: formData,
             });
-
-            if (!emailRes.ok) {
-                throw new Error(`Email not sent: ${emailRes.status}`);
+            if (response.status === 200) {
+                console.log("Message sent: %s", response);
+                return new Response(
+                    JSON.stringify({
+                        name: 'Email sent',
+                    }),
+                    {
+                        status: 200,
+                    }
+                )
+            } else {
+                throw new Error(`Email not sent: ${response.statusText}`);
             }
 
-            const emailResBody = await emailRes.json();
-
-            console.log("Message sent: %s", emailResBody.id);
-            return new Response(
-                JSON.stringify({
-                    name: 'Email sent',
-                }),
-                {
-                    status: 200,
-                }
-            )
-            // res.status(200).json({ status: "Email sent" });
         } catch (err) {
             console.log(err);
             return new Response(
@@ -47,9 +51,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     status: 500,
                 }
             )
-            // res.status(500).json({ status: "Email not sent" });
         }
-
     } else {
         // Handle any other HTTP method
         return new Response(
@@ -60,6 +62,5 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 status: 200,
             }
         )
-        // res.status(200).json({ status: "not a post request" });
     }
 }

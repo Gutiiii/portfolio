@@ -39,9 +39,9 @@ const Education: FC = () => {
         Education
       </motion.h2>
       <motion.div
-        initial={{ x: 1700 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        transition={{ duration: 1.5, delay: 1.5 }}
         className="grid 2xl:grid-cols-2 grid-cols-1"
       >
         <div className="space-y-4">

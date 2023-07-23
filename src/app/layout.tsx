@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
-import Head from "next/head";
 import "./globals.css";
 
 const fira_code = Fira_Code({
@@ -32,13 +31,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <link
-          rel="canonical"
-          href="https://samuel-gutmans.ch"
-          key="canonical"
-        />
-      </Head>
       <body className={`${fira_code.className}`}>{children}</body>
     </html>
   );

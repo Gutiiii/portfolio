@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
+
 import React, { Fragment } from "react";
 
 const About = () => {
@@ -15,9 +16,9 @@ const About = () => {
           About
         </motion.h2>
         <motion.div
-          initial={{ x: 1700 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 100 }}
+          transition={{ duration: 1.5, delay: 1.5 }}
         >
           <p className="sm:text-2xl text-md">
             Hello, I&apos;m Samuel Gutmans, a 20-year-old software engineer

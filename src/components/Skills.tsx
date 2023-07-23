@@ -15,9 +15,9 @@ const Skills = () => {
         Skills
       </motion.h2>
       <motion.div
-        initial={{ x: 1700 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 100 }}
+        transition={{ duration: 1.5, delay: 1.5 }}
         className="grid 2xl:grid-cols-2 grid-cols-1 text-left"
       >
         <div className="pb-8 2xl:pr-4">
