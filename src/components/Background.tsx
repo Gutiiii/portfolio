@@ -11,11 +11,15 @@ const Background: FC<BackgroundProps> = ({ children }) => {
   const [backgroundStyle, setBackgroundStyle] = useState({});
   useEffect(() => {
     setBackgroundStyle({
-      background: `radial-gradient(circle 300px at ${cursorPosition.x}px ${cursorPosition.y}px, rgba(20,29,58, 1) 25%, rgba(20,29,58, 1) 50%, #111625)`,
+      background: `radial-gradient(circle 300px at ${cursorPosition.x}px ${cursorPosition.y}px, rgba(20,29,58, 1) 25%, rgba(20,29,58, 1) 50%, #111625) `,
     });
   }, [cursorPosition]);
 
-  return <div style={backgroundStyle}>{children}</div>;
+  return (
+    <div style={backgroundStyle} className="relative">
+      {children}
+    </div>
+  );
 };
 
 export default Background;

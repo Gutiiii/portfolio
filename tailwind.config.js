@@ -19,6 +19,9 @@ module.exports = {
       },
     },
     extend: {
+      width: {
+        clamp: "clamp(50%, 800px, 90%)"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
