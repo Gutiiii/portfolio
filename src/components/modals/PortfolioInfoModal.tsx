@@ -32,7 +32,7 @@ const PortfolioInfoModal: FC<PortfolioInfoModalProps> = ({
       }}
       id="container"
       onClick={handleOnClose}
-      className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm grid place-content-center items-center z-40"
+      
     >
       <div className="">
         <span className="font-light text-2xl text-center m-3 block text-[rgb(117,241,214)]">

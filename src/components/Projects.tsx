@@ -1,130 +1,139 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, Fragment, useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { PiMonitorBold } from "react-icons/pi";
 import { toast } from "react-toastify";
-import PortfolioInfoModal from "./modals/PortfolioInfoModal";
+import Modal from "./Modal";
 const Projects: FC = () => {
   const [portfolioModal, setPortfolioModal] = useState<boolean>(false);
 
-  const handleOnClose = () => {
-    setPortfolioModal(false);
-  };
+  const open = () => setPortfolioModal(true);
+
   return (
-    <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
-      <motion.h2
-        initial={{ x: 1700 }}
-        animate={{ x: 0 }}
-        transition={{ duration: 0.5 }}
-        className="pb-4 text-white sm:text-3xl text-2xl font-bold mb-2"
-      >
-        Projects
-      </motion.h2>
-      <motion.section
-        className="mt-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 100 }}
-        transition={{ duration: 1.5, delay: 1.5 }}
-      >
-        <div
-          className="group"
-          data-tooltip-id="download"
-          data-tooltip-content="Click for Info!"
+    <Fragment>
+      <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
+        <motion.h2
+          initial={{ x: 1700 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5 }}
+          className="pb-4 text-white sm:text-3xl text-2xl font-bold mb-2"
+        >
+          Projects
+        </motion.h2>
+        <motion.section
+          className="mt-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 100 }}
+          transition={{ duration: 1.5, delay: 1.5 }}
         >
           <div
-            className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
-            onClick={() => setPortfolioModal(true)}
+            className="group"
+            data-tooltip-id="download"
+            data-tooltip-content="Click for Info!"
           >
-            <div className="flex justify-between ">
-              <div className="ml-2 mt-2">
-                <div className="space-y-3">
-                  <h3 className="text-[rgb(117,241,214)] text-2xl">
-                    Portfolio
-                  </h3>
-                  <p className="text-lg">Software Engineer Portfolio</p>
-                  <p className="text-md">TypeScript, NextJS</p>
-                  <p>july 2023</p>
+            <div
+              className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
+              onClick={open}
+            >
+              <div className="flex justify-between ">
+                <div className="ml-2 mt-2">
+                  <div className="space-y-3">
+                    <h3 className="text-[rgb(117,241,214)] text-2xl">
+                      Portfolio
+                    </h3>
+                    <p className="text-lg">Software Engineer Portfolio</p>
+                    <p className="text-md">TypeScript, NextJS</p>
+                    <p>july 2023</p>
+                  </div>
+                </div>
+                <div className="hidden 2xl:block ">
+                  <Image
+                    unoptimized={true}
+                    src={"portfolio.gif"}
+                    alt="the gif"
+                    height={260}
+                    width={350}
+                    className="my-4"
+                  />
                 </div>
               </div>
-              <div className="hidden 2xl:block ">
-                <Image
-                  unoptimized={true}
-                  src={"portfolio.gif"}
-                  alt="the gif"
-                  height={260}
-                  width={350}
-                  className="my-4"
-                />
-              </div>
+              <div className="w-9 pt-2 " />
             </div>
-            <div className="w-9 pt-2 " />
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <PiMonitorBold className="w-6 h-6" />
+            </div>
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <a href="https://github.com/Gutiiii/portfolio" target="_blank">
+                <FaCode className="w-6 h-6" />
+              </a>
+            </div>
           </div>
-          <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
-            <PiMonitorBold className="w-6 h-6" />
-          </div>
-          <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
-            <a href="https://github.com/Gutiiii/portfolio" target="_blank">
-              <FaCode className="w-6 h-6" />
-            </a>
-          </div>
-        </div>
-        <div
-          className="group"
-          data-tooltip-id="download"
-          data-tooltip-content="Click for Info!"
-        >
-          <div className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4">
-            <div className="flex justify-between ">
-              <div className="ml-2 mt-2">
-                <div className="space-y-3">
-                  <h3 className="text-[rgb(117,241,214)] text-2xl">
-                    CRM System
-                  </h3>
-                  <p className="text-lg">CRM System for a Customer</p>
-                  <p>march 2023</p>
-                  <p className="text-md">
-                    TypeScript, ReactJS, NodeJS, MongoDB, JWT AUTH
-                  </p>
+          <div
+            className="group"
+            data-tooltip-id="download"
+            data-tooltip-content="Click for Info!"
+          >
+            <div className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4">
+              <div className="flex justify-between ">
+                <div className="ml-2 mt-2">
+                  <div className="space-y-3">
+                    <h3 className="text-[rgb(117,241,214)] text-2xl">
+                      CRM System
+                    </h3>
+                    <p className="text-lg">CRM System for a Customer</p>
+
+                    <p className="text-md">
+                      TypeScript, ReactJS, NodeJS, MongoDB, JWT AUTH
+                    </p>
+                    <p>march 2023</p>
+                  </div>
+                </div>
+                <div className="hidden 2xl:block ">
+                  <Image
+                    unoptimized={true}
+                    src={"portfolio.gif"}
+                    alt="Portfolio GIF"
+                    height={260}
+                    width={350}
+                    className="my-4"
+                  />
                 </div>
               </div>
-              <div className="hidden 2xl:block ">
-                <Image
-                  unoptimized={true}
-                  src={"portfolio.gif"}
-                  alt="Portfolio GIF"
-                  height={260}
-                  width={350}
-                  className="my-4"
-                />
-              </div>
+              <div className="w-9 pt-2 " />
             </div>
-            <div className="w-9 pt-2 " />
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <PiMonitorBold className="w-6 h-6" />
+            </div>
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <FaCode
+                className="w-6 h-6"
+                onClick={() =>
+                  toast.info("The Repository is currently not Public", {
+                    position: "top-center",
+                    autoClose: 2500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    progress: undefined,
+                    theme: "colored",
+                  })
+                }
+              />
+            </div>
           </div>
-          <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
-            <PiMonitorBold className="w-6 h-6" />
-          </div>
-          <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
-            <FaCode
-              className="w-6 h-6"
-              onClick={() =>
-                toast.info("The Repository is currently not Public", {
-                  position: "top-center",
-                  autoClose: 2500,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: false,
-                  progress: undefined,
-                  theme: "colored",
-                })
-              }
-            />
-          </div>
-        </div>
-      </motion.section>
-      <PortfolioInfoModal visible={portfolioModal} onClose={handleOnClose} />
-    </div>
+        </motion.section>
+      </div>
+      <AnimatePresence initial={false} onExitComplete={() => null}>
+        {portfolioModal && (
+          <Modal
+            visible={portfolioModal}
+            handleOnClose={() => setPortfolioModal(false)}
+          />
+        )}
+      </AnimatePresence>
+    </Fragment>
   );
 };
 
