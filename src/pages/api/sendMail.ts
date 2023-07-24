@@ -7,6 +7,15 @@ export default async function POST(req: NextRequest) {
 
     const { name, email, message } = body;
 
+    const DOMAIN = process.env.MAILGUN_DOMAIN
+
+    const API_KEY = process.env.MAILGUN_API_KEY
+
+    return new Response("HEllo", {
+        status: 200,
+        statusText: DOMAIN
+    })
+
     const formData = new URLSearchParams();
     formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
     formData.append('to', 'samuel.gutmans@gmail.com');
