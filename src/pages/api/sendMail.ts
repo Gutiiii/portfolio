@@ -1,18 +1,14 @@
-import type { NextApiResponse } from 'next';
 import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-export default async function handler(req: NextRequest, res: NextApiResponse) {
+export default async function POST(req: NextRequest) {
     if (req.method === 'POST') {
 
         const body = await req.json()
 
         const { name, email, message } = body;
 
-        console.log(name)
-        console.log(email)
-        console.log(message)
         const formData = new URLSearchParams();
         formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
         formData.append('to', 'samuel.gutmans@gmail.com');
