@@ -17,7 +17,7 @@ export const onSendMail = async (
       }
     )
     .then((res) => {
-      console.log("Response Line 20: " + res);
+      console.log("Response Line 20: " + res.statusText);
       if (res.status === 200) {
         toast.success("Email sent successfully", {
           position: "top-center",

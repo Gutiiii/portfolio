@@ -4,8 +4,9 @@ export const runtime = 'edge';
 
 export default async function POST(req: NextRequest) {
 
-    return new Response("Hello", {
-        status: 200
+    return new Response("Hello!", {
+        status: 200,
+        statusText: "Alles klappt"
     })
     // if (req.method === 'POST') {
 
