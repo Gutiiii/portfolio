@@ -49,6 +49,8 @@ export const onSendMail = async (
     })
     .catch((error) => {
       console.log("Error: " + error);
+      console.log("Status: " + error.status);
+      console.log("StatusText: " + error.statusText);
       console.log("Error1");
       toast.error("Something went wrong! Please try again", {
         position: "top-center",
