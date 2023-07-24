@@ -42,7 +42,7 @@ export default async function handler(req: NextRequest, res: NextApiResponse) {
             }
 
         } catch (err) {
-            console.log(err);
+            console.log("Mailgun Error: " + err);
             return new Response(
                 JSON.stringify({
                     name: 'Email not sent',

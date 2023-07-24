@@ -31,6 +31,7 @@ export const onSendMail = async (
           window.location.reload();
         }, 3200);
       } else {
+        console.log("Response:" + res);
         toast.error("Something went wrong! Please try again", {
           position: "top-center",
           autoClose: 2500,
@@ -46,6 +47,7 @@ export const onSendMail = async (
       }
     })
     .catch((error) => {
+      console.log("Error: " + error);
       console.log("Error1");
       toast.error("Something went wrong! Please try again", {
         position: "top-center",
