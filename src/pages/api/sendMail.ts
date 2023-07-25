@@ -4,16 +4,13 @@ export const runtime = 'edge';
 
 export default async function POST(req: NextRequest) {
     const body = await req.json()
-
     const { name, email, message } = body;
 
     const DOMAIN = process.env.MAILGUN_DOMAIN
 
-    console.log(DOMAIN)
-
     const API_KEY = process.env.MAILGUN_API_KEY
 
-    return new Response("HEllo", {
+    return new Response("Hello", {
         status: 200,
         statusText: DOMAIN
     })
