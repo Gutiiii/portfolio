@@ -7,10 +7,10 @@ export default async function POST(req: NextRequest) {
     const { name, email, message } = body;
 
     const DOMAIN_response = await fetch("https://env.samuelgutmans9.workers.dev/?query=domain");
-    const DOMAIN = await DOMAIN_response.text();
+    const DOMAIN = await DOMAIN_response.statusText;
 
     const API_KEY_response = await fetch("https://env.samuelgutmans9.workers.dev/?query=api");
-    const API_KEY = await API_KEY_response.text();
+    const API_KEY = await API_KEY_response.statusText;
 
     return new Response("Hello", {
         status: 200,
