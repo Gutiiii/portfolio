@@ -9,6 +9,8 @@ export default async function POST(req: NextRequest) {
 
     const DOMAIN = process.env.MAILGUN_DOMAIN
 
+    console.log(DOMAIN)
+
     const API_KEY = process.env.MAILGUN_API_KEY
 
     return new Response("HEllo", {
