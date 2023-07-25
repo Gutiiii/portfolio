@@ -115,7 +115,7 @@ export default function Home() {
           <div
             ref={contactRef}
             id="contact"
-            className="xl:mt-[400px] sm:mt-[300px] mt-52"
+            className="xl:mt-[400px] sm:mt-[300px] mt-52 mb-32"
           >
             <Contact />
           </div>

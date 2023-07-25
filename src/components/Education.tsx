@@ -30,7 +30,7 @@ const Education: FC = () => {
     "PHP",
   ];
   return (
-    <div className="md:mr-20 md:px-10 mx-10 text-left">
+    <div className="md:mr-20 md:px-10 mx-10 text-left pt-40">
       <motion.h2
         initial={{ x: 1700 }}
         animate={{ x: 0 }}
