@@ -16,7 +16,6 @@ export default async function POST(req: NextRequest) {
         status: 200,
         statusText: DOMAIN
     })
-}
 
     const formData = new URLSearchParams();
     formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
