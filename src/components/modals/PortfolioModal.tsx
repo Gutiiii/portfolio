@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FC } from "react";
-import Backdrop from "./Backdrop";
-interface ModalProps {
+import Backdrop from "../Backdrop";
+interface PortfolioModalProps {
   visible: boolean;
   handleOnClose: () => void;
 }
@@ -28,7 +28,10 @@ const dropIn = {
   },
 };
 
-const Modal: FC<ModalProps> = ({ handleOnClose, visible }) => {
+const PortfolioModal: FC<PortfolioModalProps> = ({
+  handleOnClose,
+  visible,
+}) => {
   if (!visible) return null;
 
   return (
@@ -92,4 +95,4 @@ const Modal: FC<ModalProps> = ({ handleOnClose, visible }) => {
   );
 };
 
-export default Modal;
+export default PortfolioModal;

@@ -5,11 +5,28 @@ import { FC, Fragment, useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { PiMonitorBold } from "react-icons/pi";
 import { toast } from "react-toastify";
-import Modal from "./Modal";
+import CRMModal from "./modals/CRMModal";
+import PortfolioModal from "./modals/PortfolioModal";
+
 const Projects: FC = () => {
   const [portfolioModal, setPortfolioModal] = useState<boolean>(false);
+  const [crmModal, setCrmModal] = useState<boolean>(false);
 
-  const open = () => setPortfolioModal(true);
+  const openPortfolio = () => {
+    setPortfolioModal(true);
+  };
+
+  const closePortfolio = () => {
+    setPortfolioModal(false);
+  };
+
+  const openCrm = () => {
+    setCrmModal(true);
+  };
+
+  const closeCrm = () => {
+    setCrmModal(false);
+  };
 
   return (
     <Fragment>
@@ -35,7 +52,7 @@ const Projects: FC = () => {
           >
             <div
               className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
-              onClick={open}
+              onClick={openPortfolio}
             >
               <div className="flex justify-between ">
                 <div className="ml-2 mt-2">
@@ -55,7 +72,7 @@ const Projects: FC = () => {
                     alt="the gif"
                     height={260}
                     width={350}
-                    className="my-4"
+                    className="my-4 rounded-xl"
                   />
                 </div>
               </div>
@@ -75,7 +92,10 @@ const Projects: FC = () => {
             data-tooltip-id="download"
             data-tooltip-content="Click for Info!"
           >
-            <div className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4">
+            <div
+              className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
+              onClick={openCrm}
+            >
               <div className="flex justify-between ">
                 <div className="ml-2 mt-2">
                   <div className="space-y-3">
@@ -93,11 +113,11 @@ const Projects: FC = () => {
                 <div className="hidden 2xl:block ">
                   <Image
                     unoptimized={true}
-                    src={"portfolio.gif"}
+                    src={"crm.gif"}
                     alt="Portfolio GIF"
                     height={260}
                     width={350}
-                    className="my-4"
+                    className="my-4 rounded-xl"
                   />
                 </div>
               </div>
@@ -127,11 +147,14 @@ const Projects: FC = () => {
       </div>
       <AnimatePresence initial={false} onExitComplete={() => null}>
         {portfolioModal && (
-          <Modal
+          <PortfolioModal
             visible={portfolioModal}
-            handleOnClose={() => setPortfolioModal(false)}
+            handleOnClose={closePortfolio}
           />
         )}
+      </AnimatePresence>
+      <AnimatePresence initial={false} onExitComplete={() => null}>
+        {crmModal && <CRMModal visible={crmModal} handleOnClose={closeCrm} />}
       </AnimatePresence>
     </Fragment>
   );
