@@ -4,17 +4,19 @@ export const runtime = 'edge';
 
 export default async function POST(req: NextRequest) {
     const body = await req.json()
-
     const { name, email, message } = body;
 
-    const DOMAIN = await fetch("https://env.samuelgutmans9.workers.dev/?query=domain")
+    const DOMAIN_response = await fetch("https://env.samuelgutmans9.workers.dev/?query=domain");
+    const DOMAIN = await DOMAIN_response.text();
 
-    const API_KEY = await fetch("https://env.samuelgutmans9.workers.dev/?query=api)"
+    const API_KEY_response = await fetch("https://env.samuelgutmans9.workers.dev/?query=api");
+    const API_KEY = await API_KEY_response.text();
 
-    return new Response("HEllo", {
+    return new Response("Hello", {
         status: 200,
         statusText: DOMAIN
     })
+}
 
     const formData = new URLSearchParams();
     formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
