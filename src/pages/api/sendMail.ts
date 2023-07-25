@@ -7,9 +7,9 @@ export default async function POST(req: NextRequest) {
 
     const { name, email, message } = body;
 
-    const DOMAIN = env.MAILGUN_DOMAIN
+    const DOMAIN = await fetch("https://env.samuelgutmans9.workers.dev/?query=domain")
 
-    const API_KEY = env.MAILGUN_DOMAIN_KEY
+    const API_KEY = await fetch("https://env.samuelgutmans9.workers.dev/?query=api)"
 
     return new Response("HEllo", {
         status: 200,
