@@ -10,10 +10,10 @@ export default async function POST(req: NextRequest) {
 
     const API_KEY = process.env.MAILGUN_API_KEY
 
-    return new Response("Hello", {
-        status: 200,
-        statusText: DOMAIN
-    })
+    // return new Response("Hello", {
+    //     status: 200,
+    //     statusText: DOMAIN
+    // })
 
     const formData = new URLSearchParams();
     formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
@@ -50,7 +50,7 @@ export default async function POST(req: NextRequest) {
                 name: 'Email not sent',
             }),
             {
-                status: 500,
+                status: 421,
                 statusText: "catch"
             }
         )
