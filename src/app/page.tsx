@@ -80,7 +80,7 @@ export default function Home() {
     <Background>
       <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white">
         <div>
-          <div className="xl:fixed">
+          <div className="xl:fixed relative">
             <Welcome />
             <Navbar
               currentSection={currentSection}
@@ -88,7 +88,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="text-gray-400 font-thin tracking-wide ">
+        <div className="text-gray-400 font-thin tracking-wide">
           <div ref={aboutRef} id="about">
             <About />
           </div>

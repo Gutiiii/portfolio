@@ -15,11 +15,7 @@ const Background: FC<BackgroundProps> = ({ children }) => {
     });
   }, [cursorPosition]);
 
-  return (
-    <div style={backgroundStyle} className="relative">
-      {children}
-    </div>
-  );
+  return <div style={backgroundStyle}>{children}</div>;
 };
 
 export default Background;
