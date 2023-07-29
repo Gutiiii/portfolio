@@ -14,7 +14,6 @@ import { ToastContainer } from "react-toastify";
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
   const [modalVisible, setModalVisible] = useState<boolean>(false);
-
   const aboutRef = useRef<any>(null);
   const skillsRef = useRef<any>(null);
   const educationRef = useRef<any>(null);
@@ -76,11 +75,26 @@ export default function Home() {
     }
   };
 
+  const setVisible = () => {
+    setModalVisible(true);
+  };
+  const setHidden = () => {
+    setModalVisible(false);
+  };
+
+  useEffect(() => {
+    if (modalVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [modalVisible]);
+
   return (
     <Background>
       <div className="lg:grid lg:grid-cols-2 lg:grid-rows-1 min-w-full h-full text-white">
         <div>
-          <div className="xl:fixed relative">
+          <div className="xl:fixed">
             <Welcome />
             <Navbar
               currentSection={currentSection}
@@ -111,7 +125,7 @@ export default function Home() {
             id="projects"
             className="xl:mt-[400px] sm:mt-[300px] mt-52"
           >
-            <Projects />
+            <Projects setVisible={setVisible} setHidden={setHidden} />
           </div>
           <div
             ref={contactRef}

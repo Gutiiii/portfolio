@@ -8,24 +8,33 @@ import { toast } from "react-toastify";
 import CRMModal from "./modals/CRMModal";
 import PortfolioModal from "./modals/PortfolioModal";
 
-const Projects: FC = () => {
+interface ProjectsPropsInterface {
+  setVisible: () => void;
+  setHidden: () => void;
+}
+
+const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
   const [portfolioModal, setPortfolioModal] = useState<boolean>(false);
   const [crmModal, setCrmModal] = useState<boolean>(false);
 
   const openPortfolio = () => {
     setPortfolioModal(true);
+    setVisible();
   };
 
   const closePortfolio = () => {
     setPortfolioModal(false);
+    setHidden();
   };
 
   const openCrm = () => {
     setCrmModal(true);
+    setVisible();
   };
 
   const closeCrm = () => {
     setCrmModal(false);
+    setHidden();
   };
 
   return (
