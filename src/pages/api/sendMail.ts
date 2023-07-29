@@ -10,10 +10,6 @@ export default async function POST(req: NextRequest) {
 
     const API_KEY = process.env.MAILGUN_API_KEY
 
-    // return new Response("Hello", {
-    //     status: 200,
-    //     statusText: DOMAIN
-    // })
 
     const formData = new URLSearchParams();
     formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
@@ -22,10 +18,10 @@ export default async function POST(req: NextRequest) {
     formData.append('text', `Contact name: ${name} \n Email Adresse: ${email} \n\n Message: ${message}`);
 
     try {
-        const response = await fetch(`https://api.mailgun.net/v3/${process.env.MAILGUN_DOMAIN}/messages`, {
+        const response = await fetch(`https://api.mailgun.net/v3/${process.env.NEXT_PUBLIC_MAILGUN_DOMAIN}/messages`, {
             method: 'POST',
             headers: {
-                'Authorization': `Basic ${Buffer.from(`api:${process.env.MAILGUN_API_KEY}`).toString('base64')}`,
+                'Authorization': `Basic ${Buffer.from(`api:${process.env.NEXT_PUBLIC_MAILGUN_API_KEY}`).toString('base64')}`,
             },
             body: formData,
         });
@@ -50,7 +46,7 @@ export default async function POST(req: NextRequest) {
                 name: 'Email not sent',
             }),
             {
-                status: 421,
+                status: 500,
                 statusText: "catch"
             }
         )
