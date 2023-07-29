@@ -13,12 +13,10 @@ export const onSendMail = async (
       {
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
         },
       }
     )
     .then((res) => {
-      console.log("Response Line 20: " + res.statusText);
       if (res.status === 200) {
         toast.success("Email sent successfully", {
           position: "top-center",
@@ -33,7 +31,6 @@ export const onSendMail = async (
           window.location.reload();
         }, 3200);
       } else {
-        console.log("Response Line 35:" + res);
         toast.error("Something went wrong! Please try again", {
           position: "top-center",
           autoClose: 2500,
@@ -49,10 +46,6 @@ export const onSendMail = async (
       }
     })
     .catch((error) => {
-      console.log("Error: " + error);
-      console.log("Status: " + error.status);
-      console.log("StatusText: " + error.statusText);
-      console.log("Error1");
       toast.error("Something went wrong! Please try again", {
         position: "top-center",
         autoClose: 2500,

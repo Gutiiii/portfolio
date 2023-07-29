@@ -22,7 +22,6 @@ export default async function POST(req: NextRequest) {
             body: formData,
         });
         if (response.status === 200) {
-            console.log("Message sent: %s", response);
             return new Response(
                 JSON.stringify({
                     name: 'Email sent',
@@ -36,7 +35,6 @@ export default async function POST(req: NextRequest) {
         }
 
     } catch (err) {
-        console.log("Mailgun Error: " + err);
         return new Response(
             JSON.stringify({
                 name: 'Email not sent',
