@@ -8,11 +8,12 @@ export const onSendMail = async (
 ) => {
   axios
     .post(
-      "/api/sendMail",
+      "https://sendmail.samuelgutmans9.workers.dev/",
       { name, email, message },
       {
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
         },
       }
     )

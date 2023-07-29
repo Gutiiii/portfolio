@@ -6,10 +6,6 @@ export default async function POST(req: NextRequest) {
     const body = await req.json()
     const { name, email, message } = body;
 
-    const DOMAIN = process.env.MAILGUN_DOMAIN
-
-    const API_KEY = process.env.MAILGUN_API_KEY
-
 
     const formData = new URLSearchParams();
     formData.append('from', "contact@sandbox8aba1c7fdf024caebb054691baabd496.mailgun.org");
@@ -18,10 +14,10 @@ export default async function POST(req: NextRequest) {
     formData.append('text', `Contact name: ${name} \n Email Adresse: ${email} \n\n Message: ${message}`);
 
     try {
-        const response = await fetch(`https://api.mailgun.net/v3/${process.env.NEXT_PUBLIC_MAILGUN_DOMAIN}/messages`, {
+        const response = await fetch(`https://api.mailgun.net/v3/${process.env.MAILGUN_DOMAIN}/messages`, {
             method: 'POST',
             headers: {
-                'Authorization': `Basic ${Buffer.from(`api:${process.env.NEXT_PUBLIC_MAILGUN_API_KEY}`).toString('base64')}`,
+                'Authorization': `Basic ${Buffer.from(`api:${process.env.MAILGUN_API_KEY}`).toString('base64')}`,
             },
             body: formData,
         });
