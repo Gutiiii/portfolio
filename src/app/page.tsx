@@ -13,6 +13,7 @@ import { ToastContainer } from "react-toastify";
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState<string | null>(null);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   const aboutRef = useRef<any>(null);
   const skillsRef = useRef<any>(null);

@@ -13,7 +13,7 @@ const Backdrop: FC<BackdropProps> = ({ children, onClick }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 w-full h-full pt-2 justify-center flex bg-white bg-opacity-10 backdrop-blur-sm z-40 text-white"
+      className="absolute inset-0 w-full h-full pt-2 justify-center flex bg-white bg-opacity-10 backdrop-blur-sm z-40 text-white"
       onClick={onClick}
     >
       {children}

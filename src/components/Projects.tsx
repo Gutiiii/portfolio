@@ -79,7 +79,20 @@ const Projects: FC = () => {
               <div className="w-9 pt-2 " />
             </div>
             <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
-              <PiMonitorBold className="w-6 h-6" />
+              <PiMonitorBold
+                className="w-6 h-6"
+                onClick={() =>
+                  toast.info("You are already watching this Project", {
+                    position: "top-center",
+                    autoClose: 2500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    progress: undefined,
+                    theme: "colored",
+                  })
+                }
+              />
             </div>
             <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
               <a href="https://github.com/Gutiiii/portfolio" target="_blank">
