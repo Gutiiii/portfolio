@@ -67,7 +67,10 @@ const PortfolioModal: FC<PortfolioModalProps> = ({
           The portfolio was crafted using TypeScript and NextJS, while
           TailwindCSS gave it a slick, stylish finish. As for getting it out
           there, I deployed it with Cloudflare Pages - it simply checked all the
-          boxes for what I needed.
+          boxes for what I needed. When it came to handling emails, I decided to
+          go with the Mailgun API, which was just the right tool for the job.
+          Additionally, I leveraged a serverless function from Cloudflare
+          Workers to streamline the process.
         </p>
       </motion.div>
     </Backdrop>
