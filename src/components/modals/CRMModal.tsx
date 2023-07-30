@@ -59,33 +59,24 @@ const CRMModal: FC<CRMModalProps> = ({ handleOnClose, visible }) => {
           march 2023
         </span>
         <p className="w-clamp mx-auto">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
-          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-          amet. Duis autem vel eum iriure dolor in hendrerit in vulputate velit
-          esse molestie consequat, vel illum dolore eu feugiat nulla facilisis
-          at vero eros et accumsan et iusto odio dignissim qui blandit praesent
-          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-          vero eros et accumsan et iusto odio dignissim qui blandit praesent
-          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-          Nam liber tempor cum soluta nobis eleifend option congue nihil
-          imperdiet doming id quod mazim placerat facer
+          <p className="mb-4">
+            I worked on a project for a client who needed a comprehensive CRM
+            system to manage their customers efficiently. The aim was to
+            simplify tasks like sending invoices, creating users, and more.
+            Throughout the process, I collaborated closely with the client to
+            ensure we met all their requirements.{" "}
+          </p>
+          <p className="mb-4">
+            For the frontend, I harnessed the power of TypeScript and ReactJS.
+            The component-based approach of React was a perfect match for my
+            style of coding. I also used TailwindCSS for its easy and efficient
+            styling.
+          </p>
+          On the backend, I chose Express from NodeJS. I opted for MongoDB as
+          the database because its architecture was ideally suited for this type
+          of project. I implemented JWT for the authentication system. All in
+          all, the result was a client-friendly CRM system that achieved the
+          goals we set out to meet.
         </p>
       </motion.div>
     </Backdrop>

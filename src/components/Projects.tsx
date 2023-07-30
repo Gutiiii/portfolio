@@ -165,8 +165,15 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
               />
             </div>
           </div>
+          <div className="pb-4 pt-8 text-white text-lg font-bold uppercase">
+            More Projects
+          </div>
+          <li className="pl-4">3CX - BEXIO - Integration</li>
+          <li className="pl-4">3CX - EXXAS - Integration</li>
+          <li className="pl-4">MDigital AG - KPI Dashboard</li>
         </motion.section>
       </div>
+
       <AnimatePresence initial={false} onExitComplete={() => null}>
         {portfolioModal && (
           <PortfolioModal
