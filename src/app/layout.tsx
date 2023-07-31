@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://samuel-gutmans.ch",
   },
+  icons: "faviconnew.ico",
 };
 
 export default function RootLayout({
