@@ -171,6 +171,7 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
           <li className="pl-4">3CX - BEXIO - Integration</li>
           <li className="pl-4">3CX - EXXAS - Integration</li>
           <li className="pl-4">MDigital AG - KPI Dashboard</li>
+          <li className="pl-4">MDigital AG - Labelprinter</li>
         </motion.section>
       </div>
 
