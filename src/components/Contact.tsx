@@ -1,9 +1,10 @@
 "use client";
-import { onSendMail } from "@/service/sendMail";
+import { Spinner } from "@chakra-ui/react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { FC, FormEvent, useState } from "react";
 import { useQuery } from "react-query";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact: FC = () => {
@@ -16,7 +17,7 @@ const Contact: FC = () => {
     refetch();
   };
 
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading, refetch } = useQuery({
     queryFn: async () => {
       const data = await axios.post(
         "https://sendmail.samuelgutmans9.workers.dev/",
@@ -31,9 +32,33 @@ const Contact: FC = () => {
     },
     enabled: false,
   });
-  console.log(data);
-  console.log(isLoading);
-  console.log(isError);
+  if (data?.status === 200) {
+    toast.success("Email sent successfully", {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      progress: undefined,
+      theme: "colored",
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 3200);
+  } else {
+    toast.error("Something went wrong! Please try again", {
+      position: "top-center",
+      autoClose: 2500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      progress: undefined,
+      theme: "colored",
+    });
+    setTimeout(() => {
+      window.location.reload();
+    }, 3200);
+  }
   return (
     <div className="md:mr-20 md:px-10 pt-40 mx-10">
       <motion.h2
@@ -105,7 +130,18 @@ const Contact: FC = () => {
             type="submit"
             className="bg-transparent border-gray-400 h-10 rounded-xl mb-8 mr-8 border-2 w-full hover:border-[rgb(117,241,214)] transition-all duration-200 ease-out active:bg-gray-600 active:opacity-20"
           >
-            Send!
+            {isLoading ? (
+              <Spinner
+                thickness="4px"
+                speed="0.65s"
+                emptyColor="gray.200"
+                color="black"
+                size="sm"
+                className="p4"
+              />
+            ) : (
+              "Send!"
+            )}
           </button>
         </div>
       </motion.form>

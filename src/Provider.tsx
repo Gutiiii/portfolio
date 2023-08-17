@@ -1,4 +1,5 @@
 "use client";
+import { ChakraProvider } from "@chakra-ui/react";
 import { FC, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 interface ProviderProps {
@@ -8,7 +9,9 @@ interface ProviderProps {
 const Provider: FC<ProviderProps> = ({ children }) => {
   const [queryClient] = useState(() => new QueryClient());
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider>{children}</ChakraProvider>
+    </QueryClientProvider>
   );
 };
 
