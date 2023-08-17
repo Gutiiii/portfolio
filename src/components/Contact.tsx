@@ -32,33 +32,36 @@ const Contact: FC = () => {
     },
     enabled: false,
   });
-  if (data?.status === 200) {
-    toast.success("Email sent successfully", {
-      position: "top-center",
-      autoClose: 2500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      progress: undefined,
-      theme: "colored",
-    });
-    setTimeout(() => {
-      window.location.reload();
-    }, 3200);
-  } else {
-    toast.error("Something went wrong! Please try again", {
-      position: "top-center",
-      autoClose: 2500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      progress: undefined,
-      theme: "colored",
-    });
-    setTimeout(() => {
-      window.location.reload();
-    }, 3200);
+  if (data) {
+    if (data?.status === 200) {
+      toast.success("Email sent successfully", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        progress: undefined,
+        theme: "colored",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 3200);
+    } else {
+      toast.error("Something went wrong! Please try again", {
+        position: "top-center",
+        autoClose: 2500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        progress: undefined,
+        theme: "colored",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 3200);
+    }
   }
+
   return (
     <div className="md:mr-20 md:px-10 pt-40 mx-10">
       <motion.h2
@@ -128,7 +131,7 @@ const Contact: FC = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-transparent border-gray-400 h-10 rounded-xl mb-8 mr-8 border-2 w-full hover:border-[rgb(117,241,214)] transition-all duration-200 ease-out active:bg-gray-600 active:opacity-20"
+            className="bg-transparent border-gray-400 h-9 rounded-xl mb-8 mr-8 border-2 w-full hover:border-[rgb(117,241,214)] transition-all duration-200 ease-out active:bg-gray-600 active:opacity-20"
           >
             {isLoading ? (
               <Spinner
@@ -136,8 +139,8 @@ const Contact: FC = () => {
                 speed="0.65s"
                 emptyColor="gray.200"
                 color="black"
-                size="sm"
-                className="p4"
+                size="md"
+                className="my-1"
               />
             ) : (
               "Send!"
