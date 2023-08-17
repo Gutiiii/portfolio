@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
+
+import Provider from "@/Provider";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 const fira_code = Fira_Code({
   subsets: ["latin"],
   weight: "300",
 });
-
 export const metadata: Metadata = {
   title: "Samuel Gutmans Portfolio | Software Engineer",
   description:
@@ -32,7 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fira_code.className}`}>{children}</body>
+      <body className={`${fira_code.className}`}>
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

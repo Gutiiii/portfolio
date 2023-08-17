@@ -1,7 +1,9 @@
 "use client";
 import { onSendMail } from "@/service/sendMail";
+import axios from "axios";
 import { motion } from "framer-motion";
 import { FC, FormEvent, useState } from "react";
+import { useQuery } from "react-query";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact: FC = () => {
@@ -11,8 +13,27 @@ const Contact: FC = () => {
 
   const onSend = (event: FormEvent) => {
     event.preventDefault();
-    onSendMail(name, email, message);
+    refetch();
   };
+
+  const { data, isLoading, isError, refetch } = useQuery({
+    queryFn: async () => {
+      const data = await axios.post(
+        "https://sendmail.samuelgutmans9.workers.dev/",
+        { name, email, message },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      return data;
+    },
+    enabled: false,
+  });
+  console.log(data);
+  console.log(isLoading);
+  console.log(isError);
   return (
     <div className="md:mr-20 md:px-10 pt-40 mx-10">
       <motion.h2
