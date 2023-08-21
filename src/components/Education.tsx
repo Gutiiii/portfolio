@@ -8,7 +8,7 @@ const Education: FC = () => {
     "Java",
     "PHP",
     "C#",
-    "HTML&CSS",
+    "HTML & CSS",
     "SQL",
     "Projectmanagement",
   ];
@@ -18,13 +18,12 @@ const Education: FC = () => {
     "3CX",
     "Server",
     "Office",
-    "Client/Server",
+    "Client / Server",
   ];
   const freelanceSkills: string[] = [
-    "ReactJS",
+    "ReactJS (NextJS)",
     "NodeJS",
-    "JavaScript",
-    "TypeScript",
+    "JavaScript / TypeScript",
     "TailwindCSS",
     "Python",
     "PHP",
@@ -63,8 +62,7 @@ const Education: FC = () => {
                     {imsSkills.map((skill, index) => (
                       <Badge
                         key={index}
-                        variant="outline"
-                        className="rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
+                        className=" text-black rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
                       >
                         {skill}
                       </Badge>
@@ -129,8 +127,7 @@ const Education: FC = () => {
                   {mdSkills.map((skill, index) => (
                     <Badge
                       key={index}
-                      variant="outline"
-                      className="rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
+                      className=" text-black rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
@@ -155,8 +152,7 @@ const Education: FC = () => {
                   {freelanceSkills.map((skill, index) => (
                     <Badge
                       key={index}
-                      variant="outline"
-                      className="rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
+                      className=" text-black rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
