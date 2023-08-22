@@ -1,5 +1,5 @@
 "use client";
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import React, { Fragment } from "react";
 
