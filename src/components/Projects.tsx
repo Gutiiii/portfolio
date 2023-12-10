@@ -7,6 +7,7 @@ import { PiMonitorBold } from "react-icons/pi";
 import { toast } from "react-toastify";
 import CRMModal from "./modals/CRMModal";
 import PortfolioModal from "./modals/PortfolioModal";
+import ProjSyncModal from "./modals/ProjSyncModal";
 
 interface ProjectsPropsInterface {
   setVisible: () => void;
@@ -16,6 +17,7 @@ interface ProjectsPropsInterface {
 const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
   const [portfolioModal, setPortfolioModal] = useState<boolean>(false);
   const [crmModal, setCrmModal] = useState<boolean>(false);
+  const [projSyncModal, setProjSyncModal] = useState<boolean>(false);
 
   const openPortfolio = () => {
     setPortfolioModal(true);
@@ -37,6 +39,16 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
     setHidden();
   };
 
+  const openProjSync = () => {
+    setProjSyncModal(true);
+    setVisible();
+  };
+
+  const closeProjSync = () => {
+    setProjSyncModal(false);
+    setHidden();
+  };
+
   return (
     <Fragment>
       <div className="md:mr-20 md:px-10 pt-40 mx-10 text-left">
@@ -48,12 +60,62 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
         >
           Projects
         </motion.h2>
+
         <motion.section
           className="mt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 100 }}
           transition={{ duration: 1.5, delay: 1.5 }}
         >
+          {/* Copy this for new Project */}
+          <div
+            className="group"
+            data-tooltip-id="download"
+            data-tooltip-content="Click for Info!"
+          >
+            <div
+              className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
+              onClick={openProjSync}
+            >
+              <div className="flex justify-between ">
+                <div className="ml-2 mt-2">
+                  <div className="space-y-3">
+                    <h3 className="text-[rgb(117,241,214)] text-2xl">
+                      ProjSync
+                    </h3>
+                    <p className="text-lg">
+                      Project Management Tool for Freelancers
+                    </p>
+                    <p className="text-md">
+                      TypeScript, NextJS, NestJS, NextAuth
+                    </p>
+                    <p>december 2023</p>
+                  </div>
+                </div>
+                <div className="hidden 2xl:block ">
+                  <Image
+                    unoptimized={true}
+                    src={"projsync.gif"}
+                    alt="the gif"
+                    height={260}
+                    width={350}
+                    className="my-4 rounded-xl"
+                  />
+                </div>
+              </div>
+              <div className="w-9 pt-2 " />
+            </div>
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <a href="https://projsync.up.railway.app">
+                <PiMonitorBold className="w-6 h-6" />
+              </a>
+            </div>
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <a href="https://github.com/Gutiiii/projsync" target="_blank">
+                <FaCode className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
           <div
             className="group"
             data-tooltip-id="download"
@@ -185,6 +247,14 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
       </AnimatePresence>
       <AnimatePresence initial={false} onExitComplete={() => null}>
         {crmModal && <CRMModal visible={crmModal} handleOnClose={closeCrm} />}
+      </AnimatePresence>
+      <AnimatePresence initial={false} onExitComplete={() => null}>
+        {projSyncModal && (
+          <ProjSyncModal
+            visible={projSyncModal}
+            handleOnClose={closeProjSync}
+          />
+        )}
       </AnimatePresence>
     </Fragment>
   );
