@@ -87,7 +87,7 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
                       Project Management Tool for Freelancers
                     </p>
                     <p className="text-md">
-                      TypeScript, NextJS, NestJS, NextAuth
+                      TypeScript, NextJS, NestJS, NextAuth¨
                     </p>
                     <p>december 2023</p>
                   </div>
@@ -201,14 +201,19 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
               </div>
               <div className="w-9 pt-2 " />
             </div>
-            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+            <div
+              onClick={() =>
+                toast.info("No Preview Available", { position: "top-center" })
+              }
+              className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer"
+            >
               <PiMonitorBold className="w-6 h-6" />
             </div>
             <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
               <FaCode
                 className="w-6 h-6"
                 onClick={() =>
-                  toast.info("The Repository is currently not Public", {
+                  toast.info("This Repository is currently not Public", {
                     position: "top-center",
                   })
                 }
