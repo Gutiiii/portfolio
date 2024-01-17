@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FC, Fragment, useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { PiMonitorBold } from "react-icons/pi";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 import CRMModal from "./modals/CRMModal";
 import PortfolioModal from "./modals/PortfolioModal";
 
@@ -93,12 +93,6 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
                 onClick={() =>
                   toast.info("You are already watching this Project", {
                     position: "top-center",
-                    autoClose: 2500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    progress: undefined,
-                    theme: "colored",
                   })
                 }
               />
@@ -154,12 +148,6 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
                 onClick={() =>
                   toast.info("The Repository is currently not Public", {
                     position: "top-center",
-                    autoClose: 2500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    progress: undefined,
-                    theme: "colored",
                   })
                 }
               />

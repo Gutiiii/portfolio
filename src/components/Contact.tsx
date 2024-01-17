@@ -4,8 +4,8 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { FC, FormEvent, useState } from "react";
 import { useQuery } from "react-query";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { toast } from "sonner";
 
 const Contact: FC = () => {
   const [name, setName] = useState<string>("");
@@ -36,12 +36,6 @@ const Contact: FC = () => {
     if (data?.status === 200) {
       toast.success("Email sent successfully", {
         position: "top-center",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        progress: undefined,
-        theme: "colored",
       });
       setTimeout(() => {
         window.location.reload();
@@ -49,12 +43,6 @@ const Contact: FC = () => {
     } else {
       toast.error("Something went wrong! Please try again", {
         position: "top-center",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        progress: undefined,
-        theme: "colored",
       });
       setTimeout(() => {
         window.location.reload();
