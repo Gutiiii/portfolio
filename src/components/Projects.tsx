@@ -67,7 +67,6 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
           animate={{ opacity: 100 }}
           transition={{ duration: 1.5, delay: 1.5 }}
         >
-          {/* Copy this for new Project */}
           <div
             className="group"
             data-tooltip-id="download"
