@@ -1,5 +1,5 @@
 "use client";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner } from "@nextui-org/react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { FC, FormEvent, useState } from "react";
@@ -119,19 +119,12 @@ const Contact: FC = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="bg-transparent border-gray-400 h-9 rounded-xl mb-8 mr-8 border-2 w-full hover:border-[rgb(117,241,214)] transition-all duration-200 ease-out active:bg-gray-600 active:opacity-20"
+            className="bg-transparent border-gray-400 h-11 rounded-xl mb-8 mr-8 border-2 w-full hover:border-[rgb(117,241,214)] transition-all duration-200 ease-out active:bg-gray-600 active:opacity-20"
           >
             {isLoading ? (
-              <Spinner
-                thickness="4px"
-                speed="0.65s"
-                emptyColor="gray.200"
-                color="black"
-                size="md"
-                className="my-1"
-              />
+              <Spinner color="white" className="my-1" size="md" />
             ) : (
-              "Send!"
+              "Send Mail"
             )}
           </button>
         </div>

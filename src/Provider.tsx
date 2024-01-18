@@ -1,5 +1,6 @@
 "use client";
 import { ChakraProvider } from "@chakra-ui/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { FC, useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Toaster } from "sonner";
@@ -12,8 +13,10 @@ const Provider: FC<ProviderProps> = ({ children }) => {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider>
-        <Toaster />
-        {children}
+        <NextUIProvider>
+          <Toaster />
+          {children}
+        </NextUIProvider>
       </ChakraProvider>
     </QueryClientProvider>
   );
