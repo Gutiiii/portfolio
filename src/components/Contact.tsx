@@ -33,9 +33,6 @@ const Contact: FC = () => {
           toast.error("Something went wrong! Please try again", {
             position: "top-center",
           });
-          setTimeout(() => {
-            window.location.reload();
-          }, 1500);
         },
       }
     );
