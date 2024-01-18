@@ -1,9 +1,9 @@
 "use client";
+import { useSendMail } from "@/hooks/useSendMail";
 import { Spinner } from "@nextui-org/react";
-import axios from "axios";
 import { motion } from "framer-motion";
 import { FC, FormEvent, useState } from "react";
-import { useQuery } from "react-query";
+import { useMutation } from "react-query";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "sonner";
 
@@ -11,44 +11,35 @@ const Contact: FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
+  const mutation = useMutation({ mutationFn: useSendMail });
 
-  const onSend = (event: FormEvent) => {
+  const onSend = async (event: FormEvent) => {
     event.preventDefault();
-    refetch();
+    await mutation.mutateAsync(
+      { name, email, message },
+      {
+        onSuccess: () => {
+          setName("");
+          setEmail("");
+          setMessage("");
+          toast.success("Email sent successfully", {
+            position: "top-center",
+          });
+        },
+        onError: () => {
+          setName("");
+          setEmail("");
+          setMessage("");
+          toast.error("Something went wrong! Please try again", {
+            position: "top-center",
+          });
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
+        },
+      }
+    );
   };
-
-  const { data, isLoading, refetch } = useQuery({
-    queryFn: async () => {
-      const data = await axios.post(
-        "https://sendmail.samuelgutmans9.workers.dev/",
-        { name, email, message },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      return data;
-    },
-    enabled: false,
-  });
-  if (data) {
-    if (data?.status === 200) {
-      toast.success("Email sent successfully", {
-        position: "top-center",
-      });
-      setTimeout(() => {
-        window.location.reload();
-      }, 3200);
-    } else {
-      toast.error("Something went wrong! Please try again", {
-        position: "top-center",
-      });
-      setTimeout(() => {
-        window.location.reload();
-      }, 3200);
-    }
-  }
 
   return (
     <div className="md:mr-20 md:px-10 pt-40 mx-10">
@@ -72,6 +63,7 @@ const Contact: FC = () => {
               type="text"
               required
               name="name"
+              value={name}
               id="name"
               className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-10 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mb-8 mr-8 "
               placeholder="Name"
@@ -88,6 +80,7 @@ const Contact: FC = () => {
                 type="email"
                 required
                 name="email"
+                value={email}
                 id="email"
                 className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-10 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mr-8 "
                 placeholder="Email"
@@ -107,6 +100,7 @@ const Contact: FC = () => {
             required
             className="bg-transparent border-gray-400 border-b-2 w-full rounded-lg h-32 peer placeholder-transparent focus:outline-0 focus:border-[rgb(117,241,214)] transition-colors duration-200 mb-8 mr-8 "
             placeholder="Email"
+            value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
           <label
@@ -121,7 +115,7 @@ const Contact: FC = () => {
             type="submit"
             className="bg-transparent border-gray-400 h-11 rounded-xl mb-8 mr-8 border-2 w-full hover:border-[rgb(117,241,214)] transition-all duration-200 ease-out active:bg-gray-600 active:opacity-20"
           >
-            {isLoading ? (
+            {mutation.isLoading ? (
               <Spinner color="white" className="my-1" size="md" />
             ) : (
               "Send Mail"
