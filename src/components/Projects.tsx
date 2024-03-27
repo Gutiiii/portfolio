@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FC, Fragment, useState } from "react";
 import { FaCode } from "react-icons/fa";
 import { PiMonitorBold } from "react-icons/pi";
-import { toast } from "react-toastify";
+import { toast } from "sonner";
 import CRMModal from "./modals/CRMModal";
 import PortfolioModal from "./modals/PortfolioModal";
 import ProjSyncModal from "./modals/ProjSyncModal";
@@ -67,7 +67,6 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
           animate={{ opacity: 100 }}
           transition={{ duration: 1.5, delay: 1.5 }}
         >
-          {/* Copy this for new Project */}
           <div
             className="group"
             data-tooltip-id="download"
@@ -87,7 +86,7 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
                       Project Management Tool for Freelancers
                     </p>
                     <p className="text-md">
-                      TypeScript, NextJS, NestJS, NextAuth
+                      TypeScript, NextJS, NestJS, NextAuth¨
                     </p>
                     <p>december 2023</p>
                   </div>
@@ -155,12 +154,6 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
                 onClick={() =>
                   toast.info("You are already watching this Project", {
                     position: "top-center",
-                    autoClose: 2500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    progress: undefined,
-                    theme: "colored",
                   })
                 }
               />
@@ -207,21 +200,20 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
               </div>
               <div className="w-9 pt-2 " />
             </div>
-            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+            <div
+              onClick={() =>
+                toast.info("No Preview Available", { position: "top-center" })
+              }
+              className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer"
+            >
               <PiMonitorBold className="w-6 h-6" />
             </div>
             <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
               <FaCode
                 className="w-6 h-6"
                 onClick={() =>
-                  toast.info("The Repository is currently not Public", {
+                  toast.info("This Repository is currently not Public", {
                     position: "top-center",
-                    autoClose: 2500,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    progress: undefined,
-                    theme: "colored",
                   })
                 }
               />
