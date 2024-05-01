@@ -1,9 +1,29 @@
 "use client";
 import { motion } from "framer-motion";
-
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 const About = () => {
+  const [age, setAge] = useState(0);
+
+  useEffect(() => {
+    const calculateAge = (birthdate: any) => {
+      const today = new Date();
+      const birthDate = new Date(birthdate);
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const monthDiff = today.getMonth() - birthDate.getMonth();
+      if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < birthDate.getDate())
+      ) {
+        age--;
+      }
+      return age;
+    };
+
+    const myBirthdate = "2002-09-30"; // Replace with your actual birthdate
+    setAge(calculateAge(myBirthdate));
+  }, []); // Empty dependency array to run the effect only once on component mount
+
   return (
     <Fragment>
       <div className="md:mr-20 md:px-10 pt-40 mx-10">
@@ -21,7 +41,7 @@ const About = () => {
           transition={{ duration: 1.5, delay: 1.5 }}
         >
           <p className="sm:text-2xl text-md">
-            Hello, I&apos;m Samuel Gutmans, a 20-year-old software engineer
+            Hello, I&apos;m Samuel Gutmans, a {age}-year-old software engineer
             residing in Basel, Switzerland. I can converse fluently in German,
             English, and Danish. Holding degrees in Computer Science and
             Business Administration, I&apos;ve used my knowledge and skills as a
