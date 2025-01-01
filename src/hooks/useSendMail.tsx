@@ -1,17 +1,13 @@
-import axios from "axios";
-
 export const useSendMail = async (values: {
   name: string;
   email: string;
   message: string;
 }) => {
-  return await axios.post(
-    "https://sendmail.samuelgutmans9.workers.dev/",
-    values,
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  return await fetch("https://sendmail.samuelgutmans9.workers.dev/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(values),
+  });
 };
