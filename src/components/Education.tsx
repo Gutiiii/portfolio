@@ -17,6 +17,7 @@ const Education: FC = () => {
     "Git",
     "Docker",
     "Ubuntu",
+    "AWS",
   ];
   const imsSkills: string[] = [
     "Java",
