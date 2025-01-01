@@ -43,11 +43,11 @@ const About = () => {
           <p className="sm:text-2xl text-md">
             Hello, I&apos;m Samuel Gutmans, a {age}-year-old software engineer
             living in Basel, Switzerland. I can converse fluently in German,
-            English, and Danish. Holding degrees in Computer Science and
-            Business Administration, I&apos;ve used my knowledge and skills as a
-            Software Agency Owner and freelance software engineer in my spare
-            time for several Years. During this time, I&apos;ve built various
-            projects for clients scattered around the globe.
+            English and Danish. Holding degrees in Computer Science and Business
+            Administration, I&apos;ve used my knowledge and skills as a Software
+            Agency Owner and freelance software engineer in my spare time for
+            several Years. During this time, I&apos;ve built various projects
+            for clients scattered around the globe.
           </p>
           <br></br>
           <p className="sm:text-2xl text-md">
