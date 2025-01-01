@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import CRMModal from "./modals/CRMModal";
 import PortfolioModal from "./modals/PortfolioModal";
 import ProjSyncModal from "./modals/ProjSyncModal";
+import TrustFlareModal from "./modals/TrustFlareModal";
 
 interface ProjectsPropsInterface {
   setVisible: () => void;
@@ -15,10 +16,15 @@ interface ProjectsPropsInterface {
 }
 
 const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
+  const [trustflareModal, setTrustflaremodal] = useState<boolean>(false);
   const [portfolioModal, setPortfolioModal] = useState<boolean>(false);
   const [crmModal, setCrmModal] = useState<boolean>(false);
   const [projSyncModal, setProjSyncModal] = useState<boolean>(false);
 
+  const openTrustFlare = () => {
+    setTrustflaremodal(true);
+    setVisible();
+  };
   const openPortfolio = () => {
     setPortfolioModal(true);
     setVisible();
@@ -33,7 +39,10 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
     setCrmModal(true);
     setVisible();
   };
-
+  const closeTrustflare = () => {
+    setTrustflaremodal(false);
+    setHidden();
+  };
   const closeCrm = () => {
     setCrmModal(false);
     setHidden();
@@ -67,6 +76,59 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
           animate={{ opacity: 100 }}
           transition={{ duration: 1.5, delay: 1.5 }}
         >
+          <div
+            className="group"
+            data-tooltip-id="download"
+            data-tooltip-content="Click for Info!"
+          >
+            <div
+              className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
+              onClick={openTrustFlare}
+            >
+              <div className="flex justify-between ">
+                <div className="ml-2 mt-2">
+                  <div className="space-y-3">
+                    <h3 className="text-[rgb(117,241,214)] text-2xl">
+                      TrustFlare
+                    </h3>
+                    <p className="text-lg">
+                      Real Time Widget Display for E-Commerce Owners
+                    </p>
+                    <p className="text-md">
+                      TypeScript, NextJS, NestJS, Socket IO, NextAuth, Stripe
+                    </p>
+                    <p>october 2024</p>
+                  </div>
+                </div>
+                <div className="hidden 2xl:block ">
+                  <Image
+                    unoptimized={true}
+                    src={"TrustFlare.gif"}
+                    alt="the gif"
+                    height={260}
+                    width={350}
+                    className="my-4 rounded-xl"
+                  />
+                </div>
+              </div>
+              <div className="w-9 pt-2 " />
+            </div>
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <a href="https://trustflare.net" target="_blank">
+                <PiMonitorBold className="w-6 h-6" />
+              </a>
+            </div>
+            <div
+              onClick={() =>
+                toast.info("This Repository is currently not Public", {
+                  position: "top-center",
+                })
+              }
+              className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer"
+            >
+              <FaCode className="w-6 h-6" />
+            </div>
+          </div>
           <div
             className="group"
             data-tooltip-id="download"
@@ -227,13 +289,24 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
           <div className="pb-4 pt-8 text-white text-lg font-bold uppercase">
             More Projects
           </div>
-          <li className="pl-4">3CX - BEXIO - Integration</li>
-          <li className="pl-4">3CX - EXXAS - Integration</li>
+          <li className="pl-4">3CX - BEXIO - Integration (API)</li>
+          <li className="pl-4">3CX - EXXAS - Integration (API)</li>
           <li className="pl-4">MDigital AG - KPI Dashboard</li>
           <li className="pl-4">MDigital AG - Labelprinter</li>
+          <li className="pl-4">
+            Notion - Google Calendar Sync{" "}
+            <span className="pl-5">Automation</span>
+          </li>
         </motion.section>
       </div>
-
+      <AnimatePresence initial={false} onExitComplete={() => null}>
+        {trustflareModal && (
+          <TrustFlareModal
+            visible={trustflareModal}
+            handleOnClose={closeTrustflare}
+          />
+        )}
+      </AnimatePresence>
       <AnimatePresence initial={false} onExitComplete={() => null}>
         {portfolioModal && (
           <PortfolioModal

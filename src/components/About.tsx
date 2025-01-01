@@ -42,20 +42,20 @@ const About = () => {
         >
           <p className="sm:text-2xl text-md">
             Hello, I&apos;m Samuel Gutmans, a {age}-year-old software engineer
-            residing in Basel, Switzerland. I can converse fluently in German,
+            living in Basel, Switzerland. I can converse fluently in German,
             English, and Danish. Holding degrees in Computer Science and
             Business Administration, I&apos;ve used my knowledge and skills as a
-            freelance software engineer in my spare time for over a year. During
-            this time, I&apos;ve built various projects for clients scattered
-            around the globe.
+            Software Agency Owner and freelance software engineer in my spare
+            time for several Years. During this time, I&apos;ve built various
+            projects for clients scattered around the globe.
           </p>
           <br></br>
           <p className="sm:text-2xl text-md">
             When it comes to projects, I&apos;ve made use of a diverse set of
             technologies such as ReactJS (NextJS), NodeJS, TypeScript, Python,
-            PHP, and many more. My freelance software engineering journey has
-            led me to work on a variety of tasks including web projects, bots,
-            and an array of different automations.
+            PHP, and many more. My Coding journey has led me to work on a
+            variety of tasks including web projects, integrations, bots, and an
+            array of different automations.
           </p>
           <br></br>
           <p className="sm:text-2xl text-md">

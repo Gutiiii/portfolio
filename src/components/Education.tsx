@@ -4,6 +4,20 @@ import { Button, Timeline } from "flowbite-react";
 import { motion } from "framer-motion";
 import { FC } from "react";
 const Education: FC = () => {
+  const infyzeSkills: string[] = [
+    "NextJS",
+    "Svelte / SvelteKit",
+    "Tailwind",
+    "NestJS",
+    "TypeScript",
+    "Python",
+    "SQL",
+    "MongoDB",
+    "TailwindCSS",
+    "Git",
+    "Docker",
+    "Ubuntu",
+  ];
   const imsSkills: string[] = [
     "Java",
     "PHP",
@@ -13,6 +27,8 @@ const Education: FC = () => {
     "Projectmanagement",
   ];
   const mdSkills: string[] = [
+    "REST API",
+    "Automation Software",
     "VoIP",
     "Azure",
     "3CX",
@@ -27,6 +43,7 @@ const Education: FC = () => {
     "TailwindCSS",
     "Python",
     "PHP",
+    "Git",
   ];
   return (
     <div className="md:mr-20 md:px-10 mx-10 text-left pt-40">
@@ -62,7 +79,7 @@ const Education: FC = () => {
                     {imsSkills.map((skill, index) => (
                       <Badge
                         key={index}
-                        className=" text-black rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
+                        className="text-[#55d3cc] bg-[#55d3cc] bg-opacity-10 rounded-full h-6 mb-2 mr-1"
                       >
                         {skill}
                       </Badge>
@@ -116,18 +133,18 @@ const Education: FC = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time>august 2022 - today</Timeline.Time>
+                <Timeline.Time>june 2024 - today</Timeline.Time>
                 <Timeline.Title className="text-gray">
-                  MDigital AG
+                  Infyze Gutmans (Owner)
                 </Timeline.Title>
                 <Timeline.Body>
-                  <p>IT-Service Provider for Customers in switzerland</p>
+                  <p>Software Agency in switzerland</p>
                 </Timeline.Body>
                 <div className="flex flex-wrap">
-                  {mdSkills.map((skill, index) => (
+                  {infyzeSkills.map((skill, index) => (
                     <Badge
                       key={index}
-                      className=" text-black rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
+                      className="text-[#55d3cc] bg-[#55d3cc] bg-opacity-10 rounded-full h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
@@ -138,7 +155,29 @@ const Education: FC = () => {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time>march 2022 - today</Timeline.Time>
+                <Timeline.Time>august 2022 - jan 2024</Timeline.Time>
+                <Timeline.Title className="text-gray">
+                  MDigital AG
+                </Timeline.Title>
+                <Timeline.Body>
+                  <p>IT-Service Provider for Customers in switzerland</p>
+                </Timeline.Body>
+                <div className="flex flex-wrap">
+                  {mdSkills.map((skill, index) => (
+                    <Badge
+                      key={index}
+                      className="text-[#55d3cc] bg-[#55d3cc] bg-opacity-10 rounded-full h-6 mb-2 mr-1"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </Timeline.Content>
+            </Timeline.Item>
+            <Timeline.Item>
+              <Timeline.Point />
+              <Timeline.Content>
+                <Timeline.Time>march 2022 - june 2024</Timeline.Time>
                 <Timeline.Title className="text-gray">
                   Freelance Software Engineer
                 </Timeline.Title>
@@ -152,7 +191,7 @@ const Education: FC = () => {
                   {freelanceSkills.map((skill, index) => (
                     <Badge
                       key={index}
-                      className=" text-black rounded-full bg-[rgb(117,241,214)] opacity-70 h-6 mb-2 mr-1"
+                      className="text-[#55d3cc] bg-[#55d3cc] bg-opacity-10 rounded-full h-6 mb-2 mr-1"
                     >
                       {skill}
                     </Badge>
