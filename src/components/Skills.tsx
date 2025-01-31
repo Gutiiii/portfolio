@@ -59,11 +59,11 @@ const Skills = () => {
           </div>
           <div className="mt-4 text-white ">
             <span>Fast Comprehension</span>
-            <Progress value={90} />
+            <Progress value={95} />
           </div>
           <div className="mt-4 text-white ">
             <span>Goal Oriented</span>
-            <Progress value={90} />
+            <Progress value={95} />
           </div>
           <div className="mt-4 text-white ">
             <span>Eager to Learn</span>
