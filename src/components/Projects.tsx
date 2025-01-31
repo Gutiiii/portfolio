@@ -185,6 +185,60 @@ const Projects: FC<ProjectsPropsInterface> = ({ setVisible, setHidden }) => {
           <div
             className="group"
             data-tooltip-id="download"
+            // data-tooltip-content="Click for Info!"
+          >
+            <div
+              className="bg-black h-60 rounded-xl shadow-lg cursor-pointer group-hover:translate-x-7 transition-translate duration-300 relative z-20 p-4"
+              // onClick={openPortfolio}
+            >
+              <div className="flex justify-between ">
+                <div className="ml-2 mt-2">
+                  <div className="space-y-3">
+                    <h3 className="text-[rgb(117,241,214)] text-2xl">
+                      New Portfolio (Unter Construction)
+                    </h3>
+                    <p className="text-lg">Software Engineer Portfolio</p>
+                    <p className="text-md">TypeScript, NextJS</p>
+                    <p>january 2025</p>
+                  </div>
+                </div>
+                {/* <div className="hidden 2xl:block ">
+                  <Image
+                    unoptimized={true}
+                    src={"portfolio.gif"}
+                    alt="the gif"
+                    height={260}
+                    width={350}
+                    className="my-4 rounded-xl"
+                  />
+                </div> */}
+              </div>
+              <div className="w-9 pt-2 " />
+            </div>
+            <div className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer">
+              <PiMonitorBold
+                className="w-6 h-6"
+                onClick={() =>
+                  toast.info("Not Public yet", {
+                    position: "top-center",
+                  })
+                }
+              />
+            </div>
+            <div
+              onClick={() =>
+                toast.info("This Repository is currently not Public", {
+                  position: "top-center",
+                })
+              }
+              className="translate-x-0 transition-translate duration-300 border-[rgb(117,241,214)] border-2 p-1 rounded-full hover:scale-125 z-10 relative -top-60 w-9 mt-2 cursor-pointer"
+            >
+              <FaCode className="w-6 h-6" />
+            </div>
+          </div>
+          <div
+            className="group"
+            data-tooltip-id="download"
             data-tooltip-content="Click for Info!"
           >
             <div

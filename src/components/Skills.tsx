@@ -31,20 +31,20 @@ const Skills = () => {
             <Progress value={90} />
           </div>
           <div className="mt-4 text-white ">
-            <span>PHP</span>
-            <Progress value={80} />
-          </div>
-          <div className="mt-4 text-white ">
-            <span>Java</span>
-            <Progress value={80} />
-          </div>
-          <div className="mt-4 text-white ">
             <span>Python</span>
             <Progress value={90} />
           </div>
           <div className="mt-4 text-white ">
             <span>TailwindCSS</span>
             <Progress value={90} />
+          </div>
+          <div className="mt-4 text-white ">
+            <span>PHP</span>
+            <Progress value={60} />
+          </div>
+          <div className="mt-4 text-white ">
+            <span>Java</span>
+            <Progress value={65} />
           </div>
         </div>
         <div className="2xl:pl-4 ">
